@@ -2,6 +2,7 @@ package com.bad.batch.Model;
 
 import com.bad.batch.Enum.UserRole; // Tu enum de roles
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;   // ¡Añadido! Necesario con @NoArgsConstructor y @Builder a veces
 import lombok.Builder;
 import lombok.Data;
@@ -35,9 +36,11 @@ public class User implements UserDetails { // Correcto que implemente UserDetail
     private String password;
 
     @Column(nullable = false)
+    @Size(min=2, max = 30, message="El nombre debe tener mínimo 2 carácteres y máximo 30") // Asegúrate de que la longitud mínima y máxima sea adecuada
     private String firstName;
 
     @Column(nullable = false)
+    @Size(min=2, max = 30, message="El apellido debe tener mínimo 2 carácteres y máximo 30") 
     private String lastName;
 
     @Enumerated(EnumType.STRING)
