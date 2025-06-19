@@ -1,6 +1,7 @@
 package com.bad.batch.DTO.security;
 
 import com.bad.batch.Enum.UserRole;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
