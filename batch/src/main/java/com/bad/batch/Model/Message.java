@@ -1,10 +1,10 @@
 package com.bad.batch.Model;
 
-import com.bad.batch.Enum.MessageType;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.awt.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -27,7 +27,7 @@ public class Message {
     private String content;
 
     @Enumerated(EnumType.STRING)
-    private MessageType type;
+    private TrayIcon.MessageType type;
 
     // Para chat de mentorías/desafíos
     @ManyToOne

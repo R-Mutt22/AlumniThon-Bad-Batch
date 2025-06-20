@@ -4,6 +4,5 @@ public enum SubmissionStatus {
     SUBMITTED,
     UNDER_REVIEW,
     APPROVED,
-    REJECTED,
-    PENDING
+    REJECTED
 }

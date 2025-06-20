@@ -3,12 +3,10 @@ package com.bad.batch.Model;
 import com.bad.batch.Enum.ChallengeType;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 @Entity
 @DiscriminatorValue("CHALLENGE")
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class Challenge extends Content{
     @Column(length = 5000)
     private String problemStatement;
