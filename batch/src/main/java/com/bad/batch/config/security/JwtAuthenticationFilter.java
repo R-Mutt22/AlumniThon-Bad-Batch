@@ -1,8 +1,8 @@
 package com.bad.batch.config.security;
 
-import com.bad.batch.Model.User;
-import com.bad.batch.Repository.UserRepository;
-import com.bad.batch.Service.JwtService;
+import com.bad.batch.model.entities.User;
+import com.bad.batch.repository.UserRepository;
+import com.bad.batch.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
