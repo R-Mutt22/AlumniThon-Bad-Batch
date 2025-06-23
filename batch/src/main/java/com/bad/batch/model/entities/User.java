@@ -115,4 +115,8 @@ public class User implements UserDetails { // Correcto que implemente UserDetail
         // Implementación correcta: Mapea a tu campo 'isActive'
         return isActive;
     }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 }
