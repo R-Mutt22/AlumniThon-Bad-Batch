@@ -5,3 +5,4 @@ public enum ChallengeType {
     DESIGN,
     ARCHITECTURE
 }
+
