@@ -17,7 +17,7 @@ public class ChatMessageResponse {
     private Long senderId; 
     private String senderName; // Nombre del remitente
     private Long recipientId; // Para mensajes directos
-    private Long challengId; // Para chats de challenges
+    private Long challengeId; // Para chats de challenges
     private Long mentorshipId; // Para chats de mentoría
     private LocalDateTime timestamp;
     private boolean isSystem;
