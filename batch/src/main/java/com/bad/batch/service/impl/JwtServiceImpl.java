@@ -1,6 +1,7 @@
 package com.bad.batch.service.impl;
 
 import com.bad.batch.dto.security.TokenResponse;
+import com.bad.batch.model.entities.User;
 import com.bad.batch.service.JwtService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -44,6 +45,36 @@ public class JwtServiceImpl implements JwtService {
 
         return TokenResponse.builder()
                 .accessToken(token)
+                .build();
+    }
+
+    @Override
+    public TokenResponse generateTokenWithUser(User user) {
+        Date now = new Date();
+        Date expirationDate = new Date(now.getTime() + EXPIRATION_TIME);
+
+        String normalizedRole = user.getRole().name().startsWith("ROLE_") ? 
+                user.getRole().name().substring(5) : user.getRole().name();
+
+        String token = Jwts.builder()
+                .subject(String.valueOf(user.getId()))
+                .claim("userId", user.getId())
+                .claim("role", normalizedRole)
+                .issuedAt(now)
+                .expiration(expirationDate)
+                .signWith(secretKey, Jwts.SIG.HS256)
+                .compact();
+
+        // Crear la información del usuario
+        TokenResponse.UserInfo userInfo = TokenResponse.UserInfo.builder()
+                .id(user.getId())
+                .email(user.getEmail())
+                .username(user.getFirstName() + " " + user.getLastName())
+                .build();
+
+        return TokenResponse.builder()
+                .accessToken(token)
+                .user(userInfo)
                 .build();
     }
 

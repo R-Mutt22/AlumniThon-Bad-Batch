@@ -41,4 +41,25 @@ public class GlobalExceptionHandler {
         );
         return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorResponse> handleIllegalArgument(IllegalArgumentException ex) {
+        // Si el mensaje contiene "email ya esta registrado", devolver 409 (Conflict)
+        if (ex.getMessage() != null && ex.getMessage().contains("email ya esta registrado")) {
+            ErrorResponse response = new ErrorResponse(
+                    "USER_ALREADY_EXISTS",
+                    ex.getMessage(),
+                    HttpStatus.CONFLICT.value()
+            );
+            return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+        }
+        
+        // Para otros IllegalArgumentException, devolver 400 (Bad Request)
+        ErrorResponse response = new ErrorResponse(
+                "INVALID_REQUEST",
+                ex.getMessage(),
+                HttpStatus.BAD_REQUEST.value()
+        );
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
 }
