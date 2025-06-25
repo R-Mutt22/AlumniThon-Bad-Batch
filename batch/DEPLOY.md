@@ -25,8 +25,8 @@ PORT=8080
 ### 2. Configuración del Servicio Web en Render
 
 - **Environment**: Docker
-- **Build Command**: `docker build -t skilllink .`
-- **Start Command**: `docker run -p $PORT:8080 skilllink`
+- **Docker Build Context Directory**: `.` (raíz del repositorio)
+- **Dockerfile Path**: `./Dockerfile`
 - **Health Check Path**: `/api/keep-alive/ping`
 
 ### 3. Configuración Alternativa (Sin Docker)
@@ -34,8 +34,8 @@ PORT=8080
 Si prefieres no usar Docker, puedes usar estas configuraciones:
 
 - **Environment**: Java
-- **Build Command**: `./mvnw clean package -DskipTests`
-- **Start Command**: `java -Dspring.profiles.active=prod -Dserver.port=$PORT -jar target/*.jar`
+- **Build Command**: `cd batch && ./mvnw clean package -DskipTests`
+- **Start Command**: `cd batch && java -Dspring.profiles.active=prod -Dserver.port=$PORT -jar target/*.jar`
 
 ### 4. Keep-Alive Automático
 
@@ -43,10 +43,10 @@ El sistema incluye un endpoint de keep-alive que se ejecuta automáticamente cad
 - Endpoint: `https://tu-app.onrender.com/api/keep-alive/ping`
 - Status: `https://tu-app.onrender.com/api/keep-alive/status`
 
-### 5. Comandos Locales para Probar Docker
+### 5. Comandos Locales para Probar Docker (si tienes Docker instalado)
 
 ```bash
-# Construir la imagen
+# Construir la imagen desde la raíz del proyecto
 docker build -t skilllink .
 
 # Ejecutar localmente
@@ -74,3 +74,16 @@ Una vez desplegado, tendrás acceso a:
 
 El keep-alive se ejecutará automáticamente y puedes monitorear el estado en:
 `https://tu-app.onrender.com/api/keep-alive/status`
+
+### 8. Estructura de Archivos
+
+```
+tu-repositorio/
+├── Dockerfile          # En la raíz
+├── .dockerignore       # En la raíz
+├── batch/              # Código de la aplicación
+│   ├── src/
+│   ├── pom.xml
+│   └── ...
+└── README.md
+```
