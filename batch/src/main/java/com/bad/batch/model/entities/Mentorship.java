@@ -23,5 +23,16 @@ public class Mentorship extends Content {
 
     @Column(nullable = false)
     private Boolean isLive = false;
+
+    // Campos requeridos por la herencia de tabla única - usar valores por defecto para mentorías
+    // Usar el mismo nombre que en Challenge para evitar conflictos
+    @Column(nullable = false)
+    private Boolean allowsTeams = false;
+    
+    @Column(nullable = false, length = 2000)
+    private String acceptanceCriteria = "N/A - Mentorship";
+    
+    @Column(nullable = false, length = 5000)
+    private String problemStatement = "N/A - Mentorship";
 }
 

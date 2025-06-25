@@ -75,6 +75,10 @@ public class ContentServiceImpl implements ContentService {
             mentorship.setDurationMinutes(request.getDurationMinutes());
             mentorship.setMentorshipType(request.getMentorshipType());
             mentorship.setIsLive(request.getIsLive() != null ? request.getIsLive() : false);
+            // Campos requeridos por herencia de tabla única
+            mentorship.setAllowsTeams(false); // Siempre false para mentorías
+            mentorship.setAcceptanceCriteria("N/A - Mentorship");
+            mentorship.setProblemStatement("N/A - Mentorship");
             content = mentorship;
         } else if (request.getType() == ContentType.CHALLENGE) {
             Challenge challenge = new Challenge();
@@ -83,6 +87,10 @@ public class ContentServiceImpl implements ContentService {
             challenge.setAcceptanceCriteria(request.getAcceptanceCriteria());
             challenge.setAllowsTeams(request.getAllowsTeams() != null ? request.getAllowsTeams() : false);
             challenge.setChallengeType(request.getChallengeType());
+            // Campos requeridos por herencia de tabla única
+            challenge.setDurationMinutes(0); // 0 indica que no aplica para challenges
+            challenge.setIsLive(false);
+            challenge.setMentorshipType(MentorshipType.ONE_ON_ONE); // Valor por defecto para challenges
             content = challenge;
         } else {
             content = new Content();
@@ -117,12 +125,20 @@ public class ContentServiceImpl implements ContentService {
             ((Mentorship) content).setDurationMinutes(request.getDurationMinutes());
             ((Mentorship) content).setMentorshipType(request.getMentorshipType());
             ((Mentorship) content).setIsLive(request.getIsLive() != null ? request.getIsLive() : false);
+            // Campos requeridos por herencia de tabla única
+            ((Mentorship) content).setAllowsTeams(false); // Siempre false para mentorías
+            ((Mentorship) content).setAcceptanceCriteria("N/A - Mentorship");
+            ((Mentorship) content).setProblemStatement("N/A - Mentorship");
         } else if (content instanceof Challenge && request.getType() == ContentType.CHALLENGE) {
             mapRequestToContent(request, content);
             ((Challenge) content).setProblemStatement(request.getProblemStatement());
             ((Challenge) content).setAcceptanceCriteria(request.getAcceptanceCriteria());
             ((Challenge) content).setAllowsTeams(request.getAllowsTeams() != null ? request.getAllowsTeams() : false);
             ((Challenge) content).setChallengeType(request.getChallengeType());
+            // Campos requeridos por herencia de tabla única
+            ((Challenge) content).setDurationMinutes(0); // 0 indica que no aplica para challenges
+            ((Challenge) content).setIsLive(false);
+            ((Challenge) content).setMentorshipType(null);
         } else {
             mapRequestToContent(request, content);
         }

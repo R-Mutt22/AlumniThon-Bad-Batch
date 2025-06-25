@@ -1,3 +1,31 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< com.bad:batch >----------------------------
+[INFO] Building SkillLink 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.3.1:run (default-cli) > test-compile @ batch >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ batch ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ batch ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ batch ---
+[INFO] Copying 2 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ batch ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 9 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] <<< spring-boot:3.3.1:run (default-cli) < test-compile @ batch <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.3.1:run (default-cli) @ batch ---
+[INFO] Attaching agents: []
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -8,456 +36,117 @@
 
  :: Spring Boot ::                (v3.3.1)
 
-2025-06-23T15:06:40.858-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.bad.batch.SkillLinkApplication       : Starting SkillLinkApplication using Java 21.0.7 with PID 87006 (/home/farid/Git-Repository/alumnithon-bad-batch-backend/batch/target/classes started by farid in /home/farid/Git-Repository/alumnithon-bad-batch-backend/batch)
-2025-06-23T15:06:40.859-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.bad.batch.SkillLinkApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-06-23T15:06:40.882-05:00  INFO 87006 --- [SkillLink] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-06-23T15:06:40.882-05:00  INFO 87006 --- [SkillLink] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-06-23T15:06:41.309-05:00  INFO 87006 --- [SkillLink] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-23T15:06:41.347-05:00  INFO 87006 --- [SkillLink] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
-2025-06-23T15:06:41.715-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-06-23T15:06:41.722-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-23T15:06:41.722-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2025-06-23T15:06:41.749-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-23T15:06:41.749-05:00  INFO 87006 --- [SkillLink] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 867 ms
-2025-06-23T15:06:41.777-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-23T15:06:41.875-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2025-06-23T15:06:41.876-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-23T15:06:41.883-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2025-06-23T15:06:41.944-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-23T15:06:41.967-05:00  INFO 87006 --- [SkillLink] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2025-06-23T15:06:41.982-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-23T15:06:42.112-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-23T15:06:42.613-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: com.bad.batch.model.entities.Profile (class must be instantiated by Interceptor)
-2025-06-23T15:06:42.795-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Hibernate: 
-    create table challenge_submissions (
-        id bigint generated by default as identity,
-        demo_url varchar(255),
-        description varchar(1000),
-        feedback varchar(255),
-        repository_url varchar(255),
-        reviewed_at timestamp(6),
-        score integer,
-        status enum ('APPROVED','REJECTED','SUBMITTED','UNDER_REVIEW'),
-        submitted_at timestamp(6),
-        participation_id bigint not null,
-        reviewer_id bigint,
-        primary key (id)
-    )
-Hibernate: 
-    create table chat_messages (
-        id bigint generated by default as identity,
-        is_system_message boolean,
-        message varchar(1000) not null,
-        timestamp timestamp(6),
-        type enum ('EMOJI','FILE','SYSTEM','TEXT'),
-        chat_room_id bigint not null,
-        sender_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table chat_rooms (
-        id bigint generated by default as identity,
-        created_at timestamp(6),
-        is_active boolean,
-        room_id varchar(255),
-        content_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table content_technologies (
-        content_id bigint not null,
-        required_technologies varchar(255)
-    )
-Hibernate: 
-    create table contents (
-        content_type varchar(31) not null,
-        id bigint generated by default as identity,
-        created_at timestamp(6),
-        description varchar(2000),
-        difficulty enum ('ADVANCED','BEGINNER','INTERMEDIATE'),
-        end_date timestamp(6),
-        max_participants integer,
-        start_date timestamp(6),
-        status enum ('ACTIVE','CLOSED','DRAFT','PUBLISHED'),
-        title varchar(255) not null,
-        updated_at timestamp(6),
-        acceptance_criteria varchar(2000),
-        allows_teams boolean,
-        problem_statement varchar(5000),
-        repository_template varchar(255),
-        type enum ('ARCHITECTURE','CODING','DESIGN'),
-        duration_minutes integer,
-        is_live boolean,
-        meeting_password varchar(255),
-        streaming_platform varchar(255),
-        streaming_room_id varchar(255),
-        streaming_url varchar(255),
-        creator_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table messages (
-        id bigint generated by default as identity,
-        challenge_id bigint,
-        content varchar(1000) not null,
-        conversation_type enum ('CHALLENGE','DIRECT','MENTORSHIP') not null,
-        created_at timestamp(6) not null,
-        edited_at timestamp(6),
-        is_deleted boolean not null,
-        is_read boolean not null,
-        is_system boolean not null,
-        mentorship_id bigint,
-        read_at timestamp(6),
-        type enum ('EMOJI','FILE','SYSTEM','TEXT') not null,
-        recipient_id bigint,
-        sender_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table participations (
-        id bigint generated by default as identity,
-        completed_at timestamp(6),
-        joined_at timestamp(6),
-        notes varchar(255),
-        progress_percentage numeric(38,2),
-        status enum ('COMPLETED','DROPPED','IN_PROGRESS','JOINED'),
-        content_id bigint not null,
-        user_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table profile_interests (
-        profile_id bigint not null,
-        interests varchar(255)
-    )
-Hibernate: 
-    create table profile_technologies (
-        profile_id bigint not null,
-        technologies varchar(255)
-    )
-Hibernate: 
-    create table profiles (
-        id bigint generated by default as identity,
-        bio varchar(255),
-        created_at timestamp(6),
-        experience_level enum ('INTERMEDIATE','JUNIOR','SENIOR'),
-        github_url varchar(255),
-        linkedin_url varchar(255),
-        location varchar(255),
-        objectives varchar(255),
-        personal_website varchar(255),
-        updated_at timestamp(6),
-        visibility enum ('PRIVATE','PUBLIC'),
-        user_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table rankings (
-        id bigint generated by default as identity,
-        category varchar(255),
-        last_updated timestamp(6),
-        points integer,
-        position integer,
-        score numeric(38,2),
-        type enum ('CHALLENGE_SPECIFIC','GLOBAL','TECHNOLOGY_SPECIFIC'),
-        challenge_id bigint,
-        user_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table streaming_sessions (
-        id bigint generated by default as identity,
-        actual_start timestamp(6),
-        current_viewers integer,
-        ended_at timestamp(6),
-        max_viewers integer,
-        recording_url varchar(255),
-        scheduled_start timestamp(6),
-        session_id varchar(255),
-        status enum ('ENDED','LIVE','RECORDED','SCHEDULED'),
-        streaming_config varchar(255),
-        streaming_url varchar(255),
-        mentorship_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table user_stats (
-        id bigint generated by default as identity,
-        average_challenge_score numeric(38,2),
-        challenges_completed integer,
-        challenges_created integer,
-        global_rank integer,
-        last_updated timestamp(6),
-        mentorships_attended integer,
-        mentorships_completed integer,
-        mentorships_created integer,
-        total_challenge_score integer,
-        total_points integer,
-        user_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table users (
-        id bigint generated by default as identity,
-        created_at timestamp(6),
-        email varchar(255) not null,
-        first_name varchar(30) not null,
-        is_active boolean not null,
-        last_name varchar(30) not null,
-        password varchar(255) not null,
-        role enum ('ADMIN','DEVELOPER','MENTOR'),
-        updated_at timestamp(6),
-        primary key (id)
-    )
-Hibernate: 
-    create index idx_sender_created 
-       on messages (sender_id, created_at)
-Hibernate: 
-    create index idx_recipient_created 
-       on messages (recipient_id, created_at)
-Hibernate: 
-    create index idx_challenge_created 
-       on messages (challenge_id, created_at)
-Hibernate: 
-    create index idx_mentorship_created 
-       on messages (mentorship_id, created_at)
-Hibernate: 
-    create index idx_conversation_type 
-       on messages (conversation_type, created_at)
-Hibernate: 
-    alter table if exists profiles 
-       drop constraint if exists UK4ixsj6aqve5pxrbw2u0oyk8bb
-Hibernate: 
-    alter table if exists profiles 
-       add constraint UK4ixsj6aqve5pxrbw2u0oyk8bb unique (user_id)
-Hibernate: 
-    alter table if exists user_stats 
-       drop constraint if exists UKcgfgfs7fk42h7ck71lrs42sou
-Hibernate: 
-    alter table if exists user_stats 
-       add constraint UKcgfgfs7fk42h7ck71lrs42sou unique (user_id)
-Hibernate: 
-    alter table if exists users 
-       drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
-Hibernate: 
-    alter table if exists users 
-       add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
-Hibernate: 
-    alter table if exists challenge_submissions 
-       add constraint FK4qc9646g52mms427hamn2phk5 
-       foreign key (participation_id) 
-       references participations
-Hibernate: 
-    alter table if exists challenge_submissions 
-       add constraint FKl4aic0exm4syamnjdeg17a9qo 
-       foreign key (reviewer_id) 
-       references users
-Hibernate: 
-    alter table if exists chat_messages 
-       add constraint FKbcsxusjp1v4rd8879fhvq8ssb 
-       foreign key (chat_room_id) 
-       references chat_rooms
-Hibernate: 
-    alter table if exists chat_messages 
-       add constraint FKgiqeap8ays4lf684x7m0r2729 
-       foreign key (sender_id) 
-       references users
-Hibernate: 
-    alter table if exists chat_rooms 
-       add constraint FKc6hc5uajy9cnaff2fawswn0hi 
-       foreign key (content_id) 
-       references contents
-Hibernate: 
-    alter table if exists content_technologies 
-       add constraint FKglg9qeh79p54e196t1q1xm5mu 
-       foreign key (content_id) 
-       references contents
-Hibernate: 
-    alter table if exists contents 
-       add constraint FKkqm93m7ef9b4cdp2ij0stmbgq 
-       foreign key (creator_id) 
-       references users
-Hibernate: 
-    alter table if exists messages 
-       add constraint FKhdkwfnspwb3s60j27vpg0rpg6 
-       foreign key (recipient_id) 
-       references users
-Hibernate: 
-    alter table if exists messages 
-       add constraint FK4ui4nnwntodh6wjvck53dbk9m 
-       foreign key (sender_id) 
-       references users
-Hibernate: 
-    alter table if exists participations 
-       add constraint FKh50vtca8pcgkvkfegh1tkuls0 
-       foreign key (content_id) 
-       references contents
-Hibernate: 
-    alter table if exists participations 
-       add constraint FK166yf958qjqf8uoslyuk9e19p 
-       foreign key (user_id) 
-       references users
-Hibernate: 
-    alter table if exists profile_interests 
-       add constraint FKlq3dpdqs7v6fh5207ojjuyljs 
-       foreign key (profile_id) 
-       references profiles
-Hibernate: 
-    alter table if exists profile_technologies 
-       add constraint FKiwbedflxm2b2th6gcaip49hhv 
-       foreign key (profile_id) 
-       references profiles
-Hibernate: 
-    alter table if exists profiles 
-       add constraint FK410q61iev7klncmpqfuo85ivh 
-       foreign key (user_id) 
-       references users
-Hibernate: 
-    alter table if exists rankings 
-       add constraint FK4nhu6lyrndiywtxrnpok8604r 
-       foreign key (challenge_id) 
-       references contents
-Hibernate: 
-    alter table if exists rankings 
-       add constraint FKcup4ei1jmensgunlbncpb5rnv 
-       foreign key (user_id) 
-       references users
-Hibernate: 
-    alter table if exists streaming_sessions 
-       add constraint FKrf82um8wwncyr5ssveron3tss 
-       foreign key (mentorship_id) 
-       references contents
-Hibernate: 
-    alter table if exists user_stats 
-       add constraint FKj277c5rcqlsvwkk3hj39e2b74 
-       foreign key (user_id) 
-       references users
-2025-06-23T15:06:42.852-05:00  INFO 87006 --- [SkillLink] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-23T15:06:43.059-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-23T15:06:44.015-05:00  WARN 87006 --- [SkillLink] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-23T15:06:44.029-05:00  INFO 87006 --- [SkillLink] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
-2025-06-23T15:06:44.086-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/ws/**] in 'stompWebSocketHandlerMapping'
-2025-06-23T15:06:44.136-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 25 mappings in 'requestMappingHandlerMapping'
-2025-06-23T15:06:44.165-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2025-06-23T15:06:44.195-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
-2025-06-23T15:06:44.235-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+2025-06-24T23:30:33.112-05:00  INFO 212880 --- [SkillLink] [  restartedMain] com.bad.batch.SkillLinkApplication       : Starting SkillLinkApplication using Java 21.0.7 with PID 212880 (/home/farid/Git-Repository/alumnithon-bad-batch-backend/batch/target/classes started by farid in /home/farid/Git-Repository/alumnithon-bad-batch-backend/batch)
+2025-06-24T23:30:33.113-05:00  INFO 212880 --- [SkillLink] [  restartedMain] com.bad.batch.SkillLinkApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-06-24T23:30:33.136-05:00  INFO 212880 --- [SkillLink] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-24T23:30:33.137-05:00  INFO 212880 --- [SkillLink] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-24T23:30:33.603-05:00  INFO 212880 --- [SkillLink] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-24T23:30:33.649-05:00  INFO 212880 --- [SkillLink] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 6 JPA repository interfaces.
+2025-06-24T23:30:34.029-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-24T23:30:34.036-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-24T23:30:34.037-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2025-06-24T23:30:34.059-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-24T23:30:34.060-05:00  INFO 212880 --- [SkillLink] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 923 ms
+2025-06-24T23:30:34.088-05:00  INFO 212880 --- [SkillLink] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-24T23:30:35.082-05:00  INFO 212880 --- [SkillLink] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a1badaf
+2025-06-24T23:30:35.083-05:00  INFO 212880 --- [SkillLink] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-24T23:30:35.089-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://aws-0-us-east-1.pooler.supabase.com:6543/postgres?prepareThreshold=0'
+2025-06-24T23:30:35.155-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-24T23:30:35.179-05:00  INFO 212880 --- [SkillLink] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-06-24T23:30:35.195-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-24T23:30:35.333-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-24T23:30:35.440-05:00  WARN 212880 --- [SkillLink] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-24T23:30:36.358-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-24T23:30:36.449-05:00  INFO 212880 --- [SkillLink] [  restartedMain] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@156c8f47] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-06-24T23:30:41.519-05:00  INFO 212880 --- [SkillLink] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24T23:30:41.781-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-24T23:30:42.738-05:00  WARN 212880 --- [SkillLink] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-24T23:30:42.755-05:00  INFO 212880 --- [SkillLink] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-06-24T23:30:42.821-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/ws/**] in 'stompWebSocketHandlerMapping'
+2025-06-24T23:30:42.886-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 39 mappings in 'requestMappingHandlerMapping'
+2025-06-24T23:30:42.927-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-06-24T23:30:42.967-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-06-24T23:30:43.012-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+	c.b.b.c.ContentController:
+	
+2025-06-24T23:30:43.012-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
 	c.b.b.c.MessageController:
 	
-2025-06-23T15:06:44.235-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+2025-06-24T23:30:43.013-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
 	c.b.b.c.ProfileController:
 	
-2025-06-23T15:06:44.235-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+2025-06-24T23:30:43.013-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
 	c.b.b.c.UserController:
 	
-2025-06-23T15:06:44.235-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+2025-06-24T23:30:43.013-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
 	c.b.b.c.s.AuthApiController:
 	
-2025-06-23T15:06:44.237-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+2025-06-24T23:30:43.015-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
 	c.b.b.w.c.ChatController:
 	{[MESSAGE],[/chat.join]}: joinChat(JoinChatRequest,Principal)
 	{[MESSAGE],[/chat.leave]}: leaveChat(JoinChatRequest,Principal)
 	{[MESSAGE],[/chat.direct]}: sendDirectMessage(ChatMessageRequest,Principal)
 	{[MESSAGE],[/chat.challenge]}: sendChallengeMessage(ChatMessageRequest,Principal)
 	{[MESSAGE],[/chat.mentorship]}: sendMentorshipMessage(ChatMessageRequest,Principal)
-2025-06-23T15:06:44.238-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+2025-06-24T23:30:43.016-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
 	o.s.b.a.w.s.e.BasicErrorController:
 	
-2025-06-23T15:06:44.238-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+2025-06-24T23:30:43.016-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
 	o.s.w.a.OpenApiWebMvcResource:
 	
-2025-06-23T15:06:44.238-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+2025-06-24T23:30:43.016-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
 	o.s.w.u.SwaggerWelcomeWebMvc:
 	
-2025-06-23T15:06:44.238-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
+2025-06-24T23:30:43.016-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
 	o.s.w.u.SwaggerConfigResource:
 	
-2025-06-23T15:06:44.278-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-06-23T15:06:44.298-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-06-23T15:06:44.403-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-06-23T15:06:44.420-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-06-23T15:06:44.421-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
-2025-06-23T15:06:44.421-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
-2025-06-23T15:06:44.422-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2025-06-23T15:06:44.422-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@44973b3c]
-2025-06-23T15:06:44.422-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@44973b3c]
-2025-06-23T15:06:44.422-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@44973b3c]]
-2025-06-23T15:06:44.422-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2025-06-23T15:06:44.422-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
-2025-06-23T15:06:44.422-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
-2025-06-23T15:06:44.427-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.bad.batch.SkillLinkApplication       : Started SkillLinkApplication in 3.769 seconds (process running for 3.991)
-2025-06-23T15:06:56.934-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-23T15:06:56.934-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-06-23T15:06:56.934-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2025-06-23T15:06:56.934-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2025-06-23T15:06:56.934-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2025-06-23T15:06:56.935-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@26bdd318
-2025-06-23T15:06:56.935-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@ffbe2c6
-2025-06-23T15:06:56.935-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2025-06-23T15:06:56.935-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-06-23T15:06:56.942-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/health
-2025-06-23T15:06:56.946-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:06:56.947-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/health
-2025-06-23T15:06:56.948-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
-2025-06-23T15:06:56.949-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-06-23T15:06:56.953-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
-2025-06-23T15:06:56.957-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource actuator/health.]
-2025-06-23T15:06:56.957-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
-2025-06-23T15:06:56.960-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /error
-2025-06-23T15:06:56.961-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /error
-2025-06-23T15:06:56.961-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
-2025-06-23T15:06:56.961-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2025-06-23T15:06:56.975-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-23T15:06:56.976-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Jun 23 15:06:56 COT 2025, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
-2025-06-23T15:06:56.996-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
-2025-06-23T15:06:56.996-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:15.157-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /ws
-2025-06-23T15:07:15.157-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:15.157-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /ws
-2025-06-23T15:07:15.157-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/ws", parameters={}
-2025-06-23T15:07:15.158-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@2e5feb7f
-2025-06-23T15:07:15.158-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://localhost:8080/ws
-2025-06-23T15:07:15.159-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:07:25.278-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
-2025-06-23T15:07:25.278-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:25.278-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
-2025-06-23T15:07:25.278-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
-2025-06-23T15:07:25.278-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#createUser(UserRegistrationRequest)
-2025-06-23T15:07:25.304-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UserRegistrationRequest(firstName=Usuario, lastName=Uno, email=user1@test.com, password=Password123! (truncated)...]
-2025-06-23T15:07:25.327-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-4] c.b.batch.service.impl.AuthServiceImpl   : Intentando crear usuario por Email: user1@test.com
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-Hibernate: 
-    insert 
-    into
-        users
-        (created_at, email, first_name, is_active, last_name, password, role, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, default)
-2025-06-23T15:07:25.462-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-4] c.b.batch.service.impl.AuthServiceImpl   : Usuario creado exitosamente con ID: 1
-2025-06-23T15:07:25.504-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:25.505-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bad.batch.dto.security.TokenResponse@7708c689]
-2025-06-23T15:07:25.506-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
-2025-06-23T15:07:25.511-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
-2025-06-23T15:07:25.511-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:25.511-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
-2025-06-23T15:07:25.511-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
-2025-06-23T15:07:25.512-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#login(LoginRequest)
-2025-06-23T15:07:25.515-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.bad.batch.dto.security.LoginRequest@75ef99e0]
-2025-06-23T15:07:25.516-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-5] c.b.batch.service.impl.AuthServiceImpl   : Intentando login para usuario: user1@test.com
+2025-06-24T23:30:43.088-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-06-24T23:30:43.115-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-06-24T23:30:43.256-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-24T23:30:43.277-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-24T23:30:43.278-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2025-06-24T23:30:43.278-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2025-06-24T23:30:43.278-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-24T23:30:43.278-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2807faff]
+2025-06-24T23:30:43.278-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2807faff]
+2025-06-24T23:30:43.278-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2807faff]]
+2025-06-24T23:30:43.278-05:00  INFO 212880 --- [SkillLink] [  restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-24T23:30:43.279-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2025-06-24T23:30:43.279-05:00 DEBUG 212880 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2025-06-24T23:30:43.284-05:00  INFO 212880 --- [SkillLink] [  restartedMain] com.bad.batch.SkillLinkApplication       : Started SkillLinkApplication in 10.364 seconds (process running for 10.586)
+2025-06-24T23:31:15.623-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-24T23:31:15.624-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-24T23:31:15.624-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-06-24T23:31:15.624-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-06-24T23:31:15.624-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-06-24T23:31:15.625-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4cc698ca
+2025-06-24T23:31:15.625-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@74daa9a8
+2025-06-24T23:31:15.625-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-06-24T23:31:15.625-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-24T23:31:15.634-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2025-06-24T23:31:15.638-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24T23:31:15.640-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+2025-06-24T23:31:15.641-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
+2025-06-24T23:31:15.642-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#createUser(UserRegistrationRequest)
+2025-06-24T23:31:15.691-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.bad.batch.dto.security.TokenResponse> com.bad.batch.controller.security.AuthApiController.createUser(com.bad.batch.dto.security.UserRegistrationRequest): JSON parse error: Cannot deserialize value of type `com.bad.batch.model.enums.UserRole` from String "STUDENT": not one of the values accepted for Enum class: [MENTOR, DEVELOPER, ADMIN]
+2025-06-24T23:31:15.692-05:00  WARN 212880 --- [SkillLink] [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.bad.batch.model.enums.UserRole` from String "STUDENT": not one of the values accepted for Enum class: [MENTOR, DEVELOPER, ADMIN]]
+2025-06-24T23:31:15.692-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-06-24T23:31:15.696-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-06-24T23:31:15.697-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /error
+2025-06-24T23:31:15.697-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-06-24T23:31:15.697-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-06-24T23:31:15.705-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:31:15.706-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jun 24 23:31:15 COT 2025, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2025-06-24T23:31:15.717-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2025-06-24T23:31:15.717-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24T23:31:43.269-05:00  INFO 212880 --- [SkillLink] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2025-06-24T23:32:02.466-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2025-06-24T23:32:02.466-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24T23:32:02.467-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+2025-06-24T23:32:02.467-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
+2025-06-24T23:32:02.467-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#createUser(UserRegistrationRequest)
+2025-06-24T23:32:02.468-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UserRegistrationRequest(firstName=Juan, lastName=Pérez, email=juan.perez@example.com, password=Secur (truncated)...]
+2025-06-24T23:32:02.490-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-2] c.b.batch.service.impl.AuthServiceImpl   : Intentando crear usuario por Email: juan.perez@example.com
 Hibernate: 
     select
         u1_0.id,
@@ -503,50 +192,19 @@ Hibernate:
             on u1_0.id=p1_0.user_id 
     where
         p1_0.user_id=?
-2025-06-23T15:07:25.583-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-5] c.b.batch.service.impl.AuthServiceImpl   : Login exitoso para usuario: user1@test.com
-2025-06-23T15:07:25.585-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:25.585-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bad.batch.dto.security.TokenResponse@5025612b]
-2025-06-23T15:07:25.586-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:07:25.588-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
-2025-06-23T15:07:25.588-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:25.588-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
-2025-06-23T15:07:25.588-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
-2025-06-23T15:07:25.588-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#createUser(UserRegistrationRequest)
-2025-06-23T15:07:25.589-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UserRegistrationRequest(firstName=Usuario, lastName=Dos, email=user2@test.com, password=Password123! (truncated)...]
-2025-06-23T15:07:25.589-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-6] c.b.batch.service.impl.AuthServiceImpl   : Intentando crear usuario por Email: user2@test.com
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-Hibernate: 
-    insert 
-    into
-        users
-        (created_at, email, first_name, is_active, last_name, password, role, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, default)
-2025-06-23T15:07:25.652-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-6] c.b.batch.service.impl.AuthServiceImpl   : Usuario creado exitosamente con ID: 2
-2025-06-23T15:07:25.653-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:25.653-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bad.batch.dto.security.TokenResponse@3cb5dbcc]
-2025-06-23T15:07:25.653-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
-2025-06-23T15:07:25.655-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
-2025-06-23T15:07:25.655-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:25.656-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
-2025-06-23T15:07:25.656-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
-2025-06-23T15:07:25.656-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#login(LoginRequest)
-2025-06-23T15:07:25.657-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.bad.batch.dto.security.LoginRequest@29ec900d]
-2025-06-23T15:07:25.657-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-7] c.b.batch.service.impl.AuthServiceImpl   : Intentando login para usuario: user2@test.com
+2025-06-24T23:32:02.880-05:00  WARN 212880 --- [SkillLink] [nio-8080-exec-2] c.b.batch.service.impl.AuthServiceImpl   : Intento crear usuario con email existente: juan.perez@example.com
+2025-06-24T23:32:02.880-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.bad.batch.exceptions.GlobalExceptionHandler#handleIllegalArgument(IllegalArgumentException)
+2025-06-24T23:32:02.887-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:32:02.887-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(error=USER_ALREADY_EXISTS, message=El email ya esta registrado., timestamp=2025-06-24T (truncated)...]
+2025-06-24T23:32:02.888-05:00  WARN 212880 --- [SkillLink] [nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: El email ya esta registrado.]
+2025-06-24T23:32:02.889-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
+2025-06-24T23:32:50.273-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2025-06-24T23:32:50.273-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24T23:32:50.274-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2025-06-24T23:32:50.274-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2025-06-24T23:32:50.274-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#login(LoginRequest)
+2025-06-24T23:32:50.279-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.bad.batch.dto.security.LoginRequest@591b5d8c]
+2025-06-24T23:32:50.281-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-4] c.b.batch.service.impl.AuthServiceImpl   : Intentando login para usuario: juan.perez@example.com
 Hibernate: 
     select
         u1_0.id,
@@ -592,30 +250,17 @@ Hibernate:
             on u1_0.id=p1_0.user_id 
     where
         p1_0.user_id=?
-2025-06-23T15:07:25.717-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-7] c.b.batch.service.impl.AuthServiceImpl   : Login exitoso para usuario: user2@test.com
-2025-06-23T15:07:25.718-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:25.718-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bad.batch.dto.security.TokenResponse@17e3af96]
-2025-06-23T15:07:25.718-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:07:25.721-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /ws/websocket
-2025-06-23T15:07:25.722-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:25.722-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /ws/websocket
-2025-06-23T15:07:25.722-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/ws/websocket", parameters={}
-2025-06-23T15:07:25.722-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-8] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@2e5feb7f
-2025-06-23T15:07:25.722-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-8] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://localhost:8080/ws/websocket
-2025-06-23T15:07:25.732-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 101 SWITCHING_PROTOCOLS
-2025-06-23T15:07:25.738-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /ws/websocket
-2025-06-23T15:07:25.738-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:25.738-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /ws/websocket
-2025-06-23T15:07:25.738-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/ws/websocket", parameters={}
-2025-06-23T15:07:25.738-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-9] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@2e5feb7f
-2025-06-23T15:07:25.738-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-9] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://localhost:8080/ws/websocket
-2025-06-23T15:07:25.739-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 101 SWITCHING_PROTOCOLS
-2025-06-23T15:07:25.740-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-9] s.w.s.h.LoggingWebSocketHandlerDecorator : New StandardWebSocketSession[id=ef2a830c-8e76-f01c-a32a-3f2b52f9f5d1, uri=ws://localhost:8080/ws/websocket]
-2025-06-23T15:07:25.740-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-8] s.w.s.h.LoggingWebSocketHandlerDecorator : New StandardWebSocketSession[id=ff78199c-452d-750f-e676-887e7937aac0, uri=ws://localhost:8080/ws/websocket]
-2025-06-23T15:07:25.773-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-3] org.springframework.web.SimpLogging      : Processing CONNECT user=2 session=ef2a830c-8e76-f01c-a32a-3f2b52f9f5d1
-2025-06-23T15:07:25.773-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-4] org.springframework.web.SimpLogging      : Processing CONNECT user=1 session=ff78199c-452d-750f-e676-887e7937aac0
-2025-06-23T15:07:25.773-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat.direct session=ff78199c-452d-750f-e676-887e7937aac0 application/json payload={"content":"Hola! Este es un mensaje de prueba","type":"TEXT","recipientId":2}, lookupDestination='/chat.direct'
-2025-06-23T15:07:25.775-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-7] .WebSocketAnnotationMethodMessageHandler : Invoking ChatController#sendDirectMessage[2 args]
+2025-06-24T23:32:50.671-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-4] c.b.batch.service.impl.AuthServiceImpl   : Login exitoso para usuario: juan.perez@example.com
+2025-06-24T23:32:50.704-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:32:50.705-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bad.batch.dto.security.TokenResponse@79d0a31a]
+2025-06-24T23:32:50.706-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-24T23:33:03.462-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2025-06-24T23:33:03.462-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24T23:33:03.462-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+2025-06-24T23:33:03.462-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
+2025-06-24T23:33:03.463-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#createUser(UserRegistrationRequest)
+2025-06-24T23:33:03.463-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UserRegistrationRequest(firstName=María, lastName=González, email=maria.gonzalez@example.com, passwo (truncated)...]
+2025-06-24T23:33:03.464-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-6] c.b.batch.service.impl.AuthServiceImpl   : Intentando crear usuario por Email: maria.gonzalez@example.com
 Hibernate: 
     select
         u1_0.id,
@@ -625,69 +270,81 @@ Hibernate:
         u1_0.is_active,
         u1_0.last_name,
         u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
         u1_0.role,
         u1_0.updated_at 
     from
         users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
     where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
+        u1_0.email=?
 Hibernate: 
     insert 
     into
-        messages
-        (challenge_id, content, conversation_type, created_at, edited_at, is_deleted, is_read, is_system, mentorship_id, read_at, recipient_id, sender_id, type, id) 
+        users
+        (created_at, email, first_name, is_active, last_name, password, role, updated_at) 
     values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
-2025-06-23T15:07:25.793-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-7] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-userff78199c-452d-750f-e676-887e7937aac0 session=null payload={"id":1,"content":"Hola! Este es un mensaje de prueba","type":"TEXT","senderId":...(truncated)
-2025-06-23T15:07:25.795-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-7] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-useref2a830c-8e76-f01c-a32a-3f2b52f9f5d1 session=null payload={"id":1,"content":"Hola! Este es un mensaje de prueba","type":"TEXT","senderId":...(truncated)
-2025-06-23T15:07:25.795-05:00  INFO 87006 --- [SkillLink] [nboundChannel-7] c.b.b.w.service.impl.ChatServiceImpl     : Mensaje directo guardado y enviado de 1 a 2
-2025-06-23T15:07:26.743-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-10] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat.direct session=ef2a830c-8e76-f01c-a32a-3f2b52f9f5d1 application/json payload={"content":"Hola! Mensaje de respuesta","type":"TEXT","recipientId":1}, lookupDestination='/chat.direct'
-2025-06-23T15:07:26.743-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-10] .WebSocketAnnotationMethodMessageHandler : Invoking ChatController#sendDirectMessage[2 args]
+        (?, ?, ?, ?, ?, ?, ?, ?) 
+    returning id
+2025-06-24T23:33:03.955-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-6] c.b.batch.service.impl.AuthServiceImpl   : Usuario creado exitosamente con ID: 3
+2025-06-24T23:33:03.956-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:33:03.956-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bad.batch.dto.security.TokenResponse@11a507e4]
+2025-06-24T23:33:03.957-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2025-06-24T23:33:20.583-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2025-06-24T23:33:20.584-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24T23:33:20.584-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2025-06-24T23:33:20.584-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2025-06-24T23:33:20.584-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#login(LoginRequest)
+2025-06-24T23:33:20.585-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.bad.batch.dto.security.LoginRequest@64684661]
+2025-06-24T23:33:20.585-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-8] c.b.batch.service.impl.AuthServiceImpl   : Intentando login para usuario: juan.perez@example.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.bio,
+        p1_0.created_at,
+        p1_0.experience_level,
+        p1_0.github_url,
+        p1_0.linkedin_url,
+        p1_0.location,
+        p1_0.objectives,
+        p1_0.personal_website,
+        p1_0.updated_at,
+        p1_0.user_id,
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        p1_0.visibility 
+    from
+        profiles p1_0 
+    join
+        users u1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        p1_0.user_id=?
+2025-06-24T23:33:20.970-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-8] c.b.batch.service.impl.AuthServiceImpl   : Login exitoso para usuario: juan.perez@example.com
+2025-06-24T23:33:20.971-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:33:20.971-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bad.batch.dto.security.TokenResponse@5d44a477]
+2025-06-24T23:33:20.972-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-24T23:34:26.448-05:00 DEBUG 212880 --- [SkillLink] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /api/users
 Hibernate: 
     select
         u1_0.id,
@@ -718,6 +375,87 @@ Hibernate:
             on u1_0.id=p1_0.user_id 
     where
         u1_0.id=?
+2025-06-24T23:34:26.717-05:00  INFO 212880 --- [SkillLink] [io-8080-exec-10] c.b.b.c.s.JwtAuthenticationFilter        : User juan.perez@example.com successfully authenticated with role DEVELOPER.
+2025-06-24T23:34:26.717-05:00 DEBUG 212880 --- [SkillLink] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /api/users
+2025-06-24T23:34:26.717-05:00 DEBUG 212880 --- [SkillLink] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/users", parameters={}
+2025-06-24T23:34:26.718-05:00 DEBUG 212880 --- [SkillLink] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.UserController#getAllUsers()
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.bio,
+        p1_0.created_at,
+        p1_0.experience_level,
+        p1_0.github_url,
+        p1_0.linkedin_url,
+        p1_0.location,
+        p1_0.objectives,
+        p1_0.personal_website,
+        p1_0.updated_at,
+        p1_0.user_id,
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        p1_0.visibility 
+    from
+        profiles p1_0 
+    join
+        users u1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        p1_0.user_id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.bio,
+        p1_0.created_at,
+        p1_0.experience_level,
+        p1_0.github_url,
+        p1_0.linkedin_url,
+        p1_0.location,
+        p1_0.objectives,
+        p1_0.personal_website,
+        p1_0.updated_at,
+        p1_0.user_id,
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.updated_at,
+        p1_0.visibility 
+    from
+        profiles p1_0 
+    join
+        users u1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        p1_0.user_id=?
+2025-06-24T23:34:27.046-05:00 DEBUG 212880 --- [SkillLink] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:34:27.047-05:00 DEBUG 212880 --- [SkillLink] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[UserDTO(id=null, email=juan.perez@example.com, firstName=Juan, lastName=Pérez, role=DEVELOPER, isAc (truncated)...]
+2025-06-24T23:34:27.050-05:00 DEBUG 212880 --- [SkillLink] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-24T23:35:12.800-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/profiles
 Hibernate: 
     select
         u1_0.id,
@@ -748,158 +486,18 @@ Hibernate:
             on u1_0.id=p1_0.user_id 
     where
         u1_0.id=?
-Hibernate: 
-    insert 
-    into
-        messages
-        (challenge_id, content, conversation_type, created_at, edited_at, is_deleted, is_read, is_system, mentorship_id, read_at, recipient_id, sender_id, type, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
-2025-06-23T15:07:26.746-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-10] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-useref2a830c-8e76-f01c-a32a-3f2b52f9f5d1 session=null payload={"id":2,"content":"Hola! Mensaje de respuesta","type":"TEXT","senderId":2,"sende...(truncated)
-2025-06-23T15:07:26.746-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-10] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-userff78199c-452d-750f-e676-887e7937aac0 session=null payload={"id":2,"content":"Hola! Mensaje de respuesta","type":"TEXT","senderId":2,"sende...(truncated)
-2025-06-23T15:07:26.746-05:00  INFO 87006 --- [SkillLink] [boundChannel-10] c.b.b.w.service.impl.ChatServiceImpl     : Mensaje directo guardado y enviado de 2 a 1
-2025-06-23T15:07:27.744-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-13] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat.direct session=ff78199c-452d-750f-e676-887e7937aac0 application/json payload={"content":"Segundo mensaje para probar persistencia","type":"TEXT","recipientId...(truncated), lookupDestination='/chat.direct'
-2025-06-23T15:07:27.744-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-13] .WebSocketAnnotationMethodMessageHandler : Invoking ChatController#sendDirectMessage[2 args]
+2025-06-24T23:35:13.045-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-2] c.b.b.c.s.JwtAuthenticationFilter        : User juan.perez@example.com successfully authenticated with role DEVELOPER.
+2025-06-24T23:35:13.045-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/profiles
+2025-06-24T23:35:13.045-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/profiles", parameters={}
+2025-06-24T23:35:13.045-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.ProfileController#createProfile(CreateProfileRequest, Long)
+2025-06-24T23:35:13.050-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [CreateProfileRequest(bio=Desarrollador Full Stack con experiencia en Spring Boot y React, location=M (truncated)...]
 Hibernate: 
     select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
+        p1_0.id 
     from
-        users u1_0 
-    left join
         profiles p1_0 
-            on u1_0.id=p1_0.user_id 
     where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    insert 
-    into
-        messages
-        (challenge_id, content, conversation_type, created_at, edited_at, is_deleted, is_read, is_system, mentorship_id, read_at, recipient_id, sender_id, type, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
-2025-06-23T15:07:27.747-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-13] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-userff78199c-452d-750f-e676-887e7937aac0 session=null payload={"id":3,"content":"Segundo mensaje para probar persistencia","type":"TEXT","send...(truncated)
-2025-06-23T15:07:27.747-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-13] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-useref2a830c-8e76-f01c-a32a-3f2b52f9f5d1 session=null payload={"id":3,"content":"Segundo mensaje para probar persistencia","type":"TEXT","send...(truncated)
-2025-06-23T15:07:27.748-05:00  INFO 87006 --- [SkillLink] [boundChannel-13] c.b.b.w.service.impl.ChatServiceImpl     : Mensaje directo guardado y enviado de 1 a 2
-2025-06-23T15:07:30.747-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/messages/direct/2?page=0&size=10
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-2025-06-23T15:07:30.751-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-3] c.b.b.c.s.JwtAuthenticationFilter        : User user1@test.com successfully authenticated with role DEVELOPER.
-2025-06-23T15:07:30.751-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/messages/direct/2?page=0&size=10
-2025-06-23T15:07:30.751-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/messages/direct/2?page=0&size=10", parameters={masked}
-2025-06-23T15:07:30.752-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.MessageController#getDirectMessages(Long, Pageable, HttpServletRequest)
-Hibernate: 
-    select
-        m1_0.id,
-        m1_0.challenge_id,
-        m1_0.content,
-        m1_0.conversation_type,
-        m1_0.created_at,
-        m1_0.edited_at,
-        m1_0.is_deleted,
-        m1_0.is_read,
-        m1_0.is_system,
-        m1_0.mentorship_id,
-        m1_0.read_at,
-        m1_0.recipient_id,
-        m1_0.sender_id,
-        m1_0.type 
-    from
-        messages m1_0 
-    where
-        m1_0.conversation_type='DIRECT' 
-        and m1_0.is_deleted=false 
-        and (
-            (
-                m1_0.sender_id=? 
-                and m1_0.recipient_id=?
-            ) 
-            or (
-                m1_0.sender_id=? 
-                and m1_0.recipient_id=?
-            )
-        ) 
-    order by
-        m1_0.created_at desc 
-    offset
-        ? rows 
+        p1_0.user_id=? 
     fetch
         first ? rows only
 Hibernate: 
@@ -934,6 +532,21 @@ Hibernate:
         u1_0.id=?
 Hibernate: 
     select
+        p1_0.id 
+    from
+        profiles p1_0 
+    where
+        p1_0.user_id=? 
+    fetch
+        first ? rows only
+2025-06-24T23:35:13.385-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.bad.batch.exceptions.GlobalExceptionHandler#handleInvalidData(RuntimeException)
+2025-06-24T23:35:13.386-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:35:13.386-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(error=INVALID_DATA, message=Tecnologías no válidas: [Spring Boot]. Tecnologías válidas (truncated)...]
+2025-06-24T23:35:13.386-05:00  WARN 212880 --- [SkillLink] [nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bad.batch.exceptions.profileExceptionsHandling.InvalidTechnologyException: Tecnologías no válidas: [Spring Boot]. Tecnologías válidas: ANGULAR, FLASK, JAVASCRIPT, KUBERNETES, MYSQL, GCP, VUE, AZURE, NODEJS, PYTHON, SPRING_BOOT, DJANGO, REDIS, DOCKER, MONGODB, POSTGRESQL, TYPESCRIPT, AWS, REACT, JAVA]
+2025-06-24T23:35:13.386-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-06-24T23:35:58.940-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/profiles
+Hibernate: 
+    select
         u1_0.id,
         u1_0.created_at,
         u1_0.email,
@@ -962,14 +575,412 @@ Hibernate:
             on u1_0.id=p1_0.user_id 
     where
         u1_0.id=?
-2025-06-23T15:07:30.774-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:30.777-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.bad.batch.websocket.dto.ChatMessageResponse instances]
-2025-06-23T15:07:30.778-05:00  WARN 87006 --- [SkillLink] [nio-8080-exec-3] PageModule$PlainPageSerializationWarning : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+2025-06-24T23:35:59.185-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-3] c.b.b.c.s.JwtAuthenticationFilter        : User juan.perez@example.com successfully authenticated with role DEVELOPER.
+2025-06-24T23:35:59.185-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/profiles
+2025-06-24T23:35:59.185-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/profiles", parameters={}
+2025-06-24T23:35:59.185-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.ProfileController#createProfile(CreateProfileRequest, Long)
+2025-06-24T23:35:59.186-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [CreateProfileRequest(bio=Desarrollador Full Stack con experiencia en Spring Boot y React, location=M (truncated)...]
+Hibernate: 
+    select
+        p1_0.id 
+    from
+        profiles p1_0 
+    where
+        p1_0.user_id=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        p1_0.id,
+        p1_0.bio,
+        p1_0.created_at,
+        p1_0.experience_level,
+        p1_0.github_url,
+        p1_0.linkedin_url,
+        p1_0.location,
+        p1_0.objectives,
+        p1_0.personal_website,
+        p1_0.updated_at,
+        p1_0.user_id,
+        p1_0.visibility,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        profiles p1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        p1_0.id 
+    from
+        profiles p1_0 
+    where
+        p1_0.user_id=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        profiles
+        (bio, created_at, experience_level, github_url, linkedin_url, location, objectives, personal_website, updated_at, user_id, visibility) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+    returning id
+Hibernate: 
+    insert 
+    into
+        profile_interests
+        (profile_id, interests) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        profile_interests
+        (profile_id, interests) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        profile_interests
+        (profile_id, interests) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        profile_technologies
+        (profile_id, technologies) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        profile_technologies
+        (profile_id, technologies) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        profile_technologies
+        (profile_id, technologies) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        profile_technologies
+        (profile_id, technologies) 
+    values
+        (?, ?)
+2025-06-24T23:36:00.170-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:36:00.173-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ProfileResponse(id=1, userId=2, firstName=null, lastName=null, bio=Desarrollador Full Stack con expe (truncated)...]
+2025-06-24T23:36:00.178-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2025-06-24T23:37:37.108-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/profiles
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        p1_0.id,
+        p1_0.bio,
+        p1_0.created_at,
+        p1_0.experience_level,
+        p1_0.github_url,
+        p1_0.linkedin_url,
+        p1_0.location,
+        p1_0.objectives,
+        p1_0.personal_website,
+        p1_0.updated_at,
+        p1_0.user_id,
+        p1_0.visibility,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        profiles p1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+2025-06-24T23:37:37.353-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-5] c.b.b.c.s.JwtAuthenticationFilter        : User juan.perez@example.com successfully authenticated with role DEVELOPER.
+2025-06-24T23:37:37.354-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/profiles
+2025-06-24T23:37:37.354-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/profiles", parameters={}
+2025-06-24T23:37:37.355-05:00  WARN 212880 --- [SkillLink] [nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-06-24T23:37:37.355-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 405 METHOD_NOT_ALLOWED
+2025-06-24T23:37:37.356-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
+2025-06-24T23:37:37.356-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /error
+2025-06-24T23:37:37.356-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-06-24T23:37:37.356-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-06-24T23:37:37.357-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:37:37.357-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jun 24 23:37:37 COT 2025, status=405, error=Method Not Allowed, trace=org.springframe (truncated)...]
+2025-06-24T23:37:37.358-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 405
+2025-06-24T23:37:37.358-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24T23:38:29.487-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/profiles/me
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        p1_0.id,
+        p1_0.bio,
+        p1_0.created_at,
+        p1_0.experience_level,
+        p1_0.github_url,
+        p1_0.linkedin_url,
+        p1_0.location,
+        p1_0.objectives,
+        p1_0.personal_website,
+        p1_0.updated_at,
+        p1_0.user_id,
+        p1_0.visibility,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        profiles p1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+2025-06-24T23:38:29.732-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-7] c.b.b.c.s.JwtAuthenticationFilter        : User juan.perez@example.com successfully authenticated with role DEVELOPER.
+2025-06-24T23:38:29.732-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/profiles/me
+2025-06-24T23:38:29.732-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/profiles/me", parameters={}
+2025-06-24T23:38:29.732-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.ProfileController#getMyProfile(Long)
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.bio,
+        p1_0.created_at,
+        p1_0.experience_level,
+        p1_0.github_url,
+        p1_0.linkedin_url,
+        p1_0.location,
+        p1_0.objectives,
+        p1_0.personal_website,
+        p1_0.updated_at,
+        p1_0.user_id,
+        p1_0.visibility 
+    from
+        profiles p1_0 
+    where
+        p1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        p1_0.id,
+        p1_0.bio,
+        p1_0.created_at,
+        p1_0.experience_level,
+        p1_0.github_url,
+        p1_0.linkedin_url,
+        p1_0.location,
+        p1_0.objectives,
+        p1_0.personal_website,
+        p1_0.updated_at,
+        p1_0.user_id,
+        p1_0.visibility,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        profiles p1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+2025-06-24T23:38:29.980-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+Hibernate: 
+    select
+        t1_0.profile_id,
+        t1_0.technologies 
+    from
+        profile_technologies t1_0 
+    where
+        t1_0.profile_id=?
+Hibernate: 
+    select
+        i1_0.profile_id,
+        i1_0.interests 
+    from
+        profile_interests i1_0 
+    where
+        i1_0.profile_id=?
+2025-06-24T23:38:30.306-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ProfileResponse(id=1, userId=2, firstName=null, lastName=null, bio=Desarrollador Full Stack con expe (truncated)...]
+2025-06-24T23:38:30.307-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-24T23:38:58.658-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /api/profiles/search
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        p1_0.id,
+        p1_0.bio,
+        p1_0.created_at,
+        p1_0.experience_level,
+        p1_0.github_url,
+        p1_0.linkedin_url,
+        p1_0.location,
+        p1_0.objectives,
+        p1_0.personal_website,
+        p1_0.updated_at,
+        p1_0.user_id,
+        p1_0.visibility,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        profiles p1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+2025-06-24T23:38:58.902-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-9] c.b.b.c.s.JwtAuthenticationFilter        : User juan.perez@example.com successfully authenticated with role DEVELOPER.
+2025-06-24T23:38:58.902-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /api/profiles/search
+2025-06-24T23:38:58.903-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/profiles/search", parameters={}
+2025-06-24T23:38:58.903-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.ProfileController#searchProfiles(String, Set, String, String, Set, int, int, String, String)
+Hibernate: 
+    select
+        distinct p1_0.id,
+        p1_0.bio,
+        p1_0.created_at,
+        p1_0.experience_level,
+        p1_0.github_url,
+        p1_0.linkedin_url,
+        p1_0.location,
+        p1_0.objectives,
+        p1_0.personal_website,
+        p1_0.updated_at,
+        p1_0.user_id,
+        p1_0.visibility 
+    from
+        profiles p1_0 
+    join
+        users u1_0 
+            on u1_0.id=p1_0.user_id 
+    left join
+        profile_technologies t1_0 
+            on p1_0.id=t1_0.profile_id 
+    left join
+        profile_interests i1_0 
+            on p1_0.id=i1_0.profile_id 
+    where
+        p1_0.visibility='PUBLIC' 
+        and u1_0.is_active=true 
+        and (
+            ? is null 
+            or ?='' 
+            or lower(u1_0.first_name) like lower(('%'||?||'%')) escape '' 
+            or lower(u1_0.last_name) like lower(('%'||?||'%')) escape '' 
+            or lower(p1_0.bio) like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or p1_0.experience_level=?
+        ) 
+        and (
+            ? is null 
+            or ?='' 
+            or lower(p1_0.location) like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ?=false 
+            or t1_0.technologies in (?)
+        ) 
+        and (
+            ?=false 
+            or i1_0.interests in (?)
+        ) 
+    order by
+        p1_0.created_at desc 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_active,
+        u1_0.last_name,
+        u1_0.password,
+        p1_0.id,
+        p1_0.bio,
+        p1_0.created_at,
+        p1_0.experience_level,
+        p1_0.github_url,
+        p1_0.linkedin_url,
+        p1_0.location,
+        p1_0.objectives,
+        p1_0.personal_website,
+        p1_0.updated_at,
+        p1_0.user_id,
+        p1_0.visibility,
+        u1_0.role,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    left join
+        profiles p1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+2025-06-24T23:38:59.172-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:38:59.172-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.bad.batch.dto.response.ProfileSearchResponse instances]
+2025-06-24T23:38:59.172-05:00  WARN 212880 --- [SkillLink] [nio-8080-exec-9] PageModule$PlainPageSerializationWarning : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
 	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
 	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
 
-2025-06-23T15:07:30.783-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:07:30.785-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/messages/direct/1?page=0&size=10
+Hibernate: 
+    select
+        t1_0.profile_id,
+        t1_0.technologies 
+    from
+        profile_technologies t1_0 
+    where
+        t1_0.profile_id=?
+Hibernate: 
+    select
+        i1_0.profile_id,
+        i1_0.interests 
+    from
+        profile_interests i1_0 
+    where
+        i1_0.profile_id=?
+2025-06-24T23:38:59.502-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-24T23:39:22.180-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /api/profiles/technologies
 Hibernate: 
     select
         u1_0.id,
@@ -1000,47 +1011,14 @@ Hibernate:
             on u1_0.id=p1_0.user_id 
     where
         u1_0.id=?
-2025-06-23T15:07:30.787-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-4] c.b.b.c.s.JwtAuthenticationFilter        : User user2@test.com successfully authenticated with role DEVELOPER.
-2025-06-23T15:07:30.787-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/messages/direct/1?page=0&size=10
-2025-06-23T15:07:30.787-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/messages/direct/1?page=0&size=10", parameters={masked}
-2025-06-23T15:07:30.788-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.MessageController#getDirectMessages(Long, Pageable, HttpServletRequest)
-Hibernate: 
-    select
-        m1_0.id,
-        m1_0.challenge_id,
-        m1_0.content,
-        m1_0.conversation_type,
-        m1_0.created_at,
-        m1_0.edited_at,
-        m1_0.is_deleted,
-        m1_0.is_read,
-        m1_0.is_system,
-        m1_0.mentorship_id,
-        m1_0.read_at,
-        m1_0.recipient_id,
-        m1_0.sender_id,
-        m1_0.type 
-    from
-        messages m1_0 
-    where
-        m1_0.conversation_type='DIRECT' 
-        and m1_0.is_deleted=false 
-        and (
-            (
-                m1_0.sender_id=? 
-                and m1_0.recipient_id=?
-            ) 
-            or (
-                m1_0.sender_id=? 
-                and m1_0.recipient_id=?
-            )
-        ) 
-    order by
-        m1_0.created_at desc 
-    offset
-        ? rows 
-    fetch
-        first ? rows only
+2025-06-24T23:39:22.425-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-1] c.b.b.c.s.JwtAuthenticationFilter        : User juan.perez@example.com successfully authenticated with role DEVELOPER.
+2025-06-24T23:39:22.425-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /api/profiles/technologies
+2025-06-24T23:39:22.425-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/profiles/technologies", parameters={}
+2025-06-24T23:39:22.426-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.ProfileController#getValidTechnologies()
+2025-06-24T23:39:22.427-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:39:22.427-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[ANGULAR, FLASK, JAVASCRIPT, KUBERNETES, MYSQL, GCP, VUE, AZURE, NODEJS, PYTHON, SPRING_BOOT, DJANGO (truncated)...]
+2025-06-24T23:39:22.427-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-24T23:39:46.422-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/profiles/interests
 Hibernate: 
     select
         u1_0.id,
@@ -1071,6 +1049,14 @@ Hibernate:
             on u1_0.id=p1_0.user_id 
     where
         u1_0.id=?
+2025-06-24T23:39:46.667-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-3] c.b.b.c.s.JwtAuthenticationFilter        : User juan.perez@example.com successfully authenticated with role DEVELOPER.
+2025-06-24T23:39:46.668-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/profiles/interests
+2025-06-24T23:39:46.668-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/profiles/interests", parameters={}
+2025-06-24T23:39:46.668-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.ProfileController#getValidInterests()
+2025-06-24T23:39:46.669-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:39:46.669-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[AI_ML, ARCHITECTURE, DEVOPS, MOBILE, TESTING, CLOUD, FRONTEND, FULLSTACK, CYBERSECURITY, DATA_SCIEN (truncated)...]
+2025-06-24T23:39:46.670-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-24T23:40:17.247-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/contents
 Hibernate: 
     select
         u1_0.id,
@@ -1101,1458 +1087,30 @@ Hibernate:
             on u1_0.id=p1_0.user_id 
     where
         u1_0.id=?
-2025-06-23T15:07:30.792-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:30.792-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.bad.batch.websocket.dto.ChatMessageResponse instances]
-2025-06-23T15:07:30.792-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:07:30.794-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/messages/conversations
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-2025-06-23T15:07:30.797-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-5] c.b.b.c.s.JwtAuthenticationFilter        : User user1@test.com successfully authenticated with role DEVELOPER.
-2025-06-23T15:07:30.797-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/messages/conversations
-2025-06-23T15:07:30.797-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/messages/conversations", parameters={}
-2025-06-23T15:07:30.797-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.MessageController#getLastConversations(HttpServletRequest)
-Hibernate: 
-    select
-        m1_0.id,
-        m1_0.challenge_id,
-        m1_0.content,
-        m1_0.conversation_type,
-        m1_0.created_at,
-        m1_0.edited_at,
-        m1_0.is_deleted,
-        m1_0.is_read,
-        m1_0.is_system,
-        m1_0.mentorship_id,
-        m1_0.read_at,
-        m1_0.recipient_id,
-        m1_0.sender_id,
-        m1_0.type 
-    from
-        messages m1_0 
-    where
-        m1_0.id in (select
-            max(m2_0.id) 
-        from
-            messages m2_0 
-        where
-            m2_0.conversation_type='DIRECT' 
-            and m2_0.is_deleted=false 
-            and (m2_0.sender_id=? 
-            or m2_0.recipient_id=?) 
-        group by
-            case 
-                when m2_0.sender_id=? 
-                    then m2_0.recipient_id 
-                else m2_0.sender_id 
-        end) 
-order by
-    m1_0.created_at desc
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-2025-06-23T15:07:30.807-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:30.808-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[ChatMessageResponse(id=3, content=Segundo mensaje para probar persistencia, type=TEXT, senderId=1,  (truncated)...]
-2025-06-23T15:07:30.809-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:07:30.811-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /api/messages/unread/count
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-2025-06-23T15:07:30.813-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-6] c.b.b.c.s.JwtAuthenticationFilter        : User user2@test.com successfully authenticated with role DEVELOPER.
-2025-06-23T15:07:30.813-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /api/messages/unread/count
-2025-06-23T15:07:30.813-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/messages/unread/count", parameters={}
-2025-06-23T15:07:30.814-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.MessageController#getUnreadCount(HttpServletRequest)
-Hibernate: 
-    select
-        count(m1_0.id) 
-    from
-        messages m1_0 
-    where
-        m1_0.recipient_id=? 
-        and m1_0.is_read=false 
-        and m1_0.is_deleted=false
-2025-06-23T15:07:30.817-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:30.817-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [2]
-2025-06-23T15:07:30.818-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:07:30.820-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-9] s.w.s.h.LoggingWebSocketHandlerDecorator : StandardWebSocketSession[id=ef2a830c-8e76-f01c-a32a-3f2b52f9f5d1, uri=ws://localhost:8080/ws/websocket] closed with CloseStatus[code=1000, reason=null]
-2025-06-23T15:07:30.820-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] s.w.s.h.LoggingWebSocketHandlerDecorator : StandardWebSocketSession[id=ff78199c-452d-750f-e676-887e7937aac0, uri=ws://localhost:8080/ws/websocket] closed with CloseStatus[code=1000, reason=null]
-2025-06-23T15:07:30.820-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] o.s.w.s.m.SubProtocolWebSocketHandler    : Clearing session ff78199c-452d-750f-e676-887e7937aac0
-2025-06-23T15:07:30.820-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-9] o.s.w.s.m.SubProtocolWebSocketHandler    : Clearing session ef2a830c-8e76-f01c-a32a-3f2b52f9f5d1
-2025-06-23T15:07:30.820-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-18] org.springframework.web.SimpLogging      : Processing DISCONNECT session=ff78199c-452d-750f-e676-887e7937aac0
-2025-06-23T15:07:30.820-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-19] org.springframework.web.SimpLogging      : Processing DISCONNECT session=ef2a830c-8e76-f01c-a32a-3f2b52f9f5d1
-2025-06-23T15:07:30.821-05:00 DEBUG 87006 --- [SkillLink] [tboundChannel-3] o.s.w.s.m.SubProtocolWebSocketHandler    : No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpUser=UsernamePasswordAuthenticationToken [Principal=2, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_DEVELOPER]], simpSessionId=ef2a830c-8e76-f01c-a32a-3f2b52f9f5d1}], simpUser=UsernamePasswordAuthenticationToken [Principal=2, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_DEVELOPER]], simpSessionId=ef2a830c-8e76-f01c-a32a-3f2b52f9f5d1}]
-2025-06-23T15:07:30.821-05:00 DEBUG 87006 --- [SkillLink] [tboundChannel-4] o.s.w.s.m.SubProtocolWebSocketHandler    : No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpUser=UsernamePasswordAuthenticationToken [Principal=1, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_DEVELOPER]], simpSessionId=ff78199c-452d-750f-e676-887e7937aac0}], simpUser=UsernamePasswordAuthenticationToken [Principal=1, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_DEVELOPER]], simpSessionId=ff78199c-452d-750f-e676-887e7937aac0}]
-2025-06-23T15:07:44.414-05:00  INFO 87006 --- [SkillLink] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 21, active threads = 0, queued tasks = 0, completed tasks = 21], outboundChannel[pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 4], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
-2025-06-23T15:07:55.547-05:00 DEBUG 87006 --- [SkillLink] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
-2025-06-23T15:07:55.547-05:00 DEBUG 87006 --- [SkillLink] [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:55.547-05:00 DEBUG 87006 --- [SkillLink] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
-2025-06-23T15:07:55.548-05:00 DEBUG 87006 --- [SkillLink] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
-2025-06-23T15:07:55.548-05:00 DEBUG 87006 --- [SkillLink] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#createUser(UserRegistrationRequest)
-2025-06-23T15:07:55.548-05:00 DEBUG 87006 --- [SkillLink] [io-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UserRegistrationRequest(firstName=Usuario, lastName=Uno, email=user1@test.com, password=Password123! (truncated)...]
-2025-06-23T15:07:55.549-05:00  INFO 87006 --- [SkillLink] [io-8080-exec-10] c.b.batch.service.impl.AuthServiceImpl   : Intentando crear usuario por Email: user1@test.com
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-Hibernate: 
-    select
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at,
-        p1_0.visibility 
-    from
-        profiles p1_0 
-    join
-        users u1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        p1_0.user_id=?
-2025-06-23T15:07:55.551-05:00  WARN 87006 --- [SkillLink] [io-8080-exec-10] c.b.batch.service.impl.AuthServiceImpl   : Intento crear usuario con email existente: user1@test.com
-2025-06-23T15:07:55.551-05:00 DEBUG 87006 --- [SkillLink] [io-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.bad.batch.exceptions.GlobalExceptionHandler#handleIllegalArgument(IllegalArgumentException)
-2025-06-23T15:07:55.553-05:00 DEBUG 87006 --- [SkillLink] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:55.553-05:00 DEBUG 87006 --- [SkillLink] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(error=USER_ALREADY_EXISTS, message=El email ya esta registrado., timestamp=2025-06-23T (truncated)...]
-2025-06-23T15:07:55.553-05:00  WARN 87006 --- [SkillLink] [io-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: El email ya esta registrado.]
-2025-06-23T15:07:55.553-05:00 DEBUG 87006 --- [SkillLink] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
-2025-06-23T15:07:55.560-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
-2025-06-23T15:07:55.560-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:55.560-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
-2025-06-23T15:07:55.560-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
-2025-06-23T15:07:55.560-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#login(LoginRequest)
-2025-06-23T15:07:55.561-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.bad.batch.dto.security.LoginRequest@7e690b28]
-2025-06-23T15:07:55.561-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-1] c.b.batch.service.impl.AuthServiceImpl   : Intentando login para usuario: user1@test.com
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-Hibernate: 
-    select
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at,
-        p1_0.visibility 
-    from
-        profiles p1_0 
-    join
-        users u1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        p1_0.user_id=?
-2025-06-23T15:07:55.622-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-1] c.b.batch.service.impl.AuthServiceImpl   : Login exitoso para usuario: user1@test.com
-2025-06-23T15:07:55.623-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:55.623-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bad.batch.dto.security.TokenResponse@61492719]
-2025-06-23T15:07:55.624-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:07:55.626-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
-2025-06-23T15:07:55.626-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:55.626-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
-2025-06-23T15:07:55.626-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/register", parameters={}
-2025-06-23T15:07:55.626-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#createUser(UserRegistrationRequest)
-2025-06-23T15:07:55.627-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [UserRegistrationRequest(firstName=Usuario, lastName=Dos, email=user2@test.com, password=Password123! (truncated)...]
-2025-06-23T15:07:55.627-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-2] c.b.batch.service.impl.AuthServiceImpl   : Intentando crear usuario por Email: user2@test.com
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-Hibernate: 
-    select
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at,
-        p1_0.visibility 
-    from
-        profiles p1_0 
-    join
-        users u1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        p1_0.user_id=?
-2025-06-23T15:07:55.629-05:00  WARN 87006 --- [SkillLink] [nio-8080-exec-2] c.b.batch.service.impl.AuthServiceImpl   : Intento crear usuario con email existente: user2@test.com
-2025-06-23T15:07:55.630-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.bad.batch.exceptions.GlobalExceptionHandler#handleIllegalArgument(IllegalArgumentException)
-2025-06-23T15:07:55.630-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:55.630-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(error=USER_ALREADY_EXISTS, message=El email ya esta registrado., timestamp=2025-06-23T (truncated)...]
-2025-06-23T15:07:55.630-05:00  WARN 87006 --- [SkillLink] [nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: El email ya esta registrado.]
-2025-06-23T15:07:55.630-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
-2025-06-23T15:07:55.632-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
-2025-06-23T15:07:55.632-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:55.633-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
-2025-06-23T15:07:55.633-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
-2025-06-23T15:07:55.633-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.security.AuthApiController#login(LoginRequest)
-2025-06-23T15:07:55.633-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.bad.batch.dto.security.LoginRequest@6ed5722d]
-2025-06-23T15:07:55.634-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-3] c.b.batch.service.impl.AuthServiceImpl   : Intentando login para usuario: user2@test.com
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    where
-        u1_0.email=?
-Hibernate: 
-    select
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        u1_0.role,
-        u1_0.updated_at,
-        p1_0.visibility 
-    from
-        profiles p1_0 
-    join
-        users u1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        p1_0.user_id=?
-2025-06-23T15:07:55.695-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-3] c.b.batch.service.impl.AuthServiceImpl   : Login exitoso para usuario: user2@test.com
-2025-06-23T15:07:55.695-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:07:55.696-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bad.batch.dto.security.TokenResponse@650caaf8]
-2025-06-23T15:07:55.696-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:07:55.699-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /ws/websocket
-2025-06-23T15:07:55.699-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:55.699-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /ws/websocket
-2025-06-23T15:07:55.699-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/ws/websocket", parameters={}
-2025-06-23T15:07:55.700-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@2e5feb7f
-2025-06-23T15:07:55.700-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://localhost:8080/ws/websocket
-2025-06-23T15:07:55.706-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 101 SWITCHING_PROTOCOLS
-2025-06-23T15:07:55.708-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] s.w.s.h.LoggingWebSocketHandlerDecorator : New StandardWebSocketSession[id=939e564f-bf8f-aa77-72bf-2ff9107b010e, uri=ws://localhost:8080/ws/websocket]
-2025-06-23T15:07:55.712-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /ws/websocket
-2025-06-23T15:07:55.712-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2025-06-23T15:07:55.713-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /ws/websocket
-2025-06-23T15:07:55.713-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/ws/websocket", parameters={}
-2025-06-23T15:07:55.713-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped to org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler@2e5feb7f
-2025-06-23T15:07:55.713-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.w.s.s.t.h.DefaultSockJsService       : Processing transport request: GET http://localhost:8080/ws/websocket
-2025-06-23T15:07:55.714-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-23] org.springframework.web.SimpLogging      : Processing CONNECT user=1 session=939e564f-bf8f-aa77-72bf-2ff9107b010e
-2025-06-23T15:07:55.714-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 101 SWITCHING_PROTOCOLS
-2025-06-23T15:07:55.714-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] s.w.s.h.LoggingWebSocketHandlerDecorator : New StandardWebSocketSession[id=3d30ce68-1784-0fb9-66ae-12099262ede7, uri=ws://localhost:8080/ws/websocket]
-2025-06-23T15:07:55.717-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-25] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat.direct session=939e564f-bf8f-aa77-72bf-2ff9107b010e application/json payload={"content":"Hola! Este es un mensaje de prueba","type":"TEXT","recipientId":2}, lookupDestination='/chat.direct'
-2025-06-23T15:07:55.717-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-25] .WebSocketAnnotationMethodMessageHandler : Invoking ChatController#sendDirectMessage[2 args]
-2025-06-23T15:07:55.718-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-29] org.springframework.web.SimpLogging      : Processing CONNECT user=2 session=3d30ce68-1784-0fb9-66ae-12099262ede7
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    insert 
-    into
-        messages
-        (challenge_id, content, conversation_type, created_at, edited_at, is_deleted, is_read, is_system, mentorship_id, read_at, recipient_id, sender_id, type, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
-2025-06-23T15:07:55.722-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-25] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-user939e564f-bf8f-aa77-72bf-2ff9107b010e session=null payload={"id":4,"content":"Hola! Este es un mensaje de prueba","type":"TEXT","senderId":...(truncated)
-2025-06-23T15:07:55.722-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-25] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-user3d30ce68-1784-0fb9-66ae-12099262ede7 session=null payload={"id":4,"content":"Hola! Este es un mensaje de prueba","type":"TEXT","senderId":...(truncated)
-2025-06-23T15:07:55.722-05:00  INFO 87006 --- [SkillLink] [boundChannel-25] c.b.b.w.service.impl.ChatServiceImpl     : Mensaje directo guardado y enviado de 1 a 2
-2025-06-23T15:07:56.718-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-31] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat.direct session=3d30ce68-1784-0fb9-66ae-12099262ede7 application/json payload={"content":"Hola! Mensaje de respuesta","type":"TEXT","recipientId":1}, lookupDestination='/chat.direct'
-2025-06-23T15:07:56.718-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-31] .WebSocketAnnotationMethodMessageHandler : Invoking ChatController#sendDirectMessage[2 args]
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    insert 
-    into
-        messages
-        (challenge_id, content, conversation_type, created_at, edited_at, is_deleted, is_read, is_system, mentorship_id, read_at, recipient_id, sender_id, type, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
-2025-06-23T15:07:56.722-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-31] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-user3d30ce68-1784-0fb9-66ae-12099262ede7 session=null payload={"id":5,"content":"Hola! Mensaje de respuesta","type":"TEXT","senderId":2,"sende...(truncated)
-2025-06-23T15:07:56.723-05:00 DEBUG 87006 --- [SkillLink] [boundChannel-31] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-user939e564f-bf8f-aa77-72bf-2ff9107b010e session=null payload={"id":5,"content":"Hola! Mensaje de respuesta","type":"TEXT","senderId":2,"sende...(truncated)
-2025-06-23T15:07:56.723-05:00  INFO 87006 --- [SkillLink] [boundChannel-31] c.b.b.w.service.impl.ChatServiceImpl     : Mensaje directo guardado y enviado de 2 a 1
-2025-06-23T15:07:57.718-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-2] .WebSocketAnnotationMethodMessageHandler : Searching methods to handle SEND /app/chat.direct session=939e564f-bf8f-aa77-72bf-2ff9107b010e application/json payload={"content":"Segundo mensaje para probar persistencia","type":"TEXT","recipientId...(truncated), lookupDestination='/chat.direct'
-2025-06-23T15:07:57.718-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-2] .WebSocketAnnotationMethodMessageHandler : Invoking ChatController#sendDirectMessage[2 args]
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    insert 
-    into
-        messages
-        (challenge_id, content, conversation_type, created_at, edited_at, is_deleted, is_read, is_system, mentorship_id, read_at, recipient_id, sender_id, type, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
-2025-06-23T15:07:57.721-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-2] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-user939e564f-bf8f-aa77-72bf-2ff9107b010e session=null payload={"id":6,"content":"Segundo mensaje para probar persistencia","type":"TEXT","send...(truncated)
-2025-06-23T15:07:57.721-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-2] org.springframework.web.SimpLogging      : Processing MESSAGE destination=/queue/messages-user3d30ce68-1784-0fb9-66ae-12099262ede7 session=null payload={"id":6,"content":"Segundo mensaje para probar persistencia","type":"TEXT","send...(truncated)
-2025-06-23T15:07:57.721-05:00  INFO 87006 --- [SkillLink] [nboundChannel-2] c.b.b.w.service.impl.ChatServiceImpl     : Mensaje directo guardado y enviado de 1 a 2
-2025-06-23T15:08:00.721-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /api/messages/direct/2?page=0&size=10
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-2025-06-23T15:08:00.724-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-2] c.b.b.c.s.JwtAuthenticationFilter        : User user1@test.com successfully authenticated with role DEVELOPER.
-2025-06-23T15:08:00.724-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /api/messages/direct/2?page=0&size=10
-2025-06-23T15:08:00.724-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/messages/direct/2?page=0&size=10", parameters={masked}
-2025-06-23T15:08:00.724-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.MessageController#getDirectMessages(Long, Pageable, HttpServletRequest)
-Hibernate: 
-    select
-        m1_0.id,
-        m1_0.challenge_id,
-        m1_0.content,
-        m1_0.conversation_type,
-        m1_0.created_at,
-        m1_0.edited_at,
-        m1_0.is_deleted,
-        m1_0.is_read,
-        m1_0.is_system,
-        m1_0.mentorship_id,
-        m1_0.read_at,
-        m1_0.recipient_id,
-        m1_0.sender_id,
-        m1_0.type 
-    from
-        messages m1_0 
-    where
-        m1_0.conversation_type='DIRECT' 
-        and m1_0.is_deleted=false 
-        and (
-            (
-                m1_0.sender_id=? 
-                and m1_0.recipient_id=?
-            ) 
-            or (
-                m1_0.sender_id=? 
-                and m1_0.recipient_id=?
-            )
-        ) 
-    order by
-        m1_0.created_at desc 
-    offset
-        ? rows 
-    fetch
-        first ? rows only
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-2025-06-23T15:08:00.728-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:08:00.728-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.bad.batch.websocket.dto.ChatMessageResponse instances]
-2025-06-23T15:08:00.729-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:08:00.731-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /api/messages/direct/1?page=0&size=10
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-2025-06-23T15:08:00.733-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-3] c.b.b.c.s.JwtAuthenticationFilter        : User user2@test.com successfully authenticated with role DEVELOPER.
-2025-06-23T15:08:00.733-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /api/messages/direct/1?page=0&size=10
-2025-06-23T15:08:00.733-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/messages/direct/1?page=0&size=10", parameters={masked}
-2025-06-23T15:08:00.734-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.MessageController#getDirectMessages(Long, Pageable, HttpServletRequest)
-Hibernate: 
-    select
-        m1_0.id,
-        m1_0.challenge_id,
-        m1_0.content,
-        m1_0.conversation_type,
-        m1_0.created_at,
-        m1_0.edited_at,
-        m1_0.is_deleted,
-        m1_0.is_read,
-        m1_0.is_system,
-        m1_0.mentorship_id,
-        m1_0.read_at,
-        m1_0.recipient_id,
-        m1_0.sender_id,
-        m1_0.type 
-    from
-        messages m1_0 
-    where
-        m1_0.conversation_type='DIRECT' 
-        and m1_0.is_deleted=false 
-        and (
-            (
-                m1_0.sender_id=? 
-                and m1_0.recipient_id=?
-            ) 
-            or (
-                m1_0.sender_id=? 
-                and m1_0.recipient_id=?
-            )
-        ) 
-    order by
-        m1_0.created_at desc 
-    offset
-        ? rows 
-    fetch
-        first ? rows only
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-2025-06-23T15:08:00.737-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:08:00.737-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.bad.batch.websocket.dto.ChatMessageResponse instances]
-2025-06-23T15:08:00.738-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:08:00.740-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /api/messages/conversations
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-2025-06-23T15:08:00.743-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-4] c.b.b.c.s.JwtAuthenticationFilter        : User user1@test.com successfully authenticated with role DEVELOPER.
-2025-06-23T15:08:00.743-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /api/messages/conversations
-2025-06-23T15:08:00.743-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/messages/conversations", parameters={}
-2025-06-23T15:08:00.743-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.MessageController#getLastConversations(HttpServletRequest)
-Hibernate: 
-    select
-        m1_0.id,
-        m1_0.challenge_id,
-        m1_0.content,
-        m1_0.conversation_type,
-        m1_0.created_at,
-        m1_0.edited_at,
-        m1_0.is_deleted,
-        m1_0.is_read,
-        m1_0.is_system,
-        m1_0.mentorship_id,
-        m1_0.read_at,
-        m1_0.recipient_id,
-        m1_0.sender_id,
-        m1_0.type 
-    from
-        messages m1_0 
-    where
-        m1_0.id in (select
-            max(m2_0.id) 
-        from
-            messages m2_0 
-        where
-            m2_0.conversation_type='DIRECT' 
-            and m2_0.is_deleted=false 
-            and (m2_0.sender_id=? 
-            or m2_0.recipient_id=?) 
-        group by
-            case 
-                when m2_0.sender_id=? 
-                    then m2_0.recipient_id 
-                else m2_0.sender_id 
-        end) 
-order by
-    m1_0.created_at desc
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-2025-06-23T15:08:00.746-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:08:00.746-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[ChatMessageResponse(id=6, content=Segundo mensaje para probar persistencia, type=TEXT, senderId=1,  (truncated)...]
-2025-06-23T15:08:00.747-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:08:00.748-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /api/messages/unread/count
-Hibernate: 
-    select
-        u1_0.id,
-        u1_0.created_at,
-        u1_0.email,
-        u1_0.first_name,
-        u1_0.is_active,
-        u1_0.last_name,
-        u1_0.password,
-        p1_0.id,
-        p1_0.bio,
-        p1_0.created_at,
-        p1_0.experience_level,
-        p1_0.github_url,
-        p1_0.linkedin_url,
-        p1_0.location,
-        p1_0.objectives,
-        p1_0.personal_website,
-        p1_0.updated_at,
-        p1_0.user_id,
-        p1_0.visibility,
-        u1_0.role,
-        u1_0.updated_at 
-    from
-        users u1_0 
-    left join
-        profiles p1_0 
-            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.id=?
-2025-06-23T15:08:00.751-05:00  INFO 87006 --- [SkillLink] [nio-8080-exec-5] c.b.b.c.s.JwtAuthenticationFilter        : User user2@test.com successfully authenticated with role DEVELOPER.
-2025-06-23T15:08:00.751-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /api/messages/unread/count
-2025-06-23T15:08:00.751-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/messages/unread/count", parameters={}
-2025-06-23T15:08:00.752-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.MessageController#getUnreadCount(HttpServletRequest)
-Hibernate: 
-    select
-        count(m1_0.id) 
-    from
-        messages m1_0 
-    where
-        m1_0.recipient_id=? 
-        and m1_0.is_read=false 
-        and m1_0.is_deleted=false
-2025-06-23T15:08:00.753-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
-2025-06-23T15:08:00.753-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [4]
-2025-06-23T15:08:00.754-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-23T15:08:00.755-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] s.w.s.h.LoggingWebSocketHandlerDecorator : StandardWebSocketSession[id=3d30ce68-1784-0fb9-66ae-12099262ede7, uri=ws://localhost:8080/ws/websocket] closed with CloseStatus[code=1000, reason=null]
-2025-06-23T15:08:00.755-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] s.w.s.h.LoggingWebSocketHandlerDecorator : StandardWebSocketSession[id=939e564f-bf8f-aa77-72bf-2ff9107b010e, uri=ws://localhost:8080/ws/websocket] closed with CloseStatus[code=1000, reason=null]
-2025-06-23T15:08:00.755-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-7] o.s.w.s.m.SubProtocolWebSocketHandler    : Clearing session 3d30ce68-1784-0fb9-66ae-12099262ede7
-2025-06-23T15:08:00.755-05:00 DEBUG 87006 --- [SkillLink] [nio-8080-exec-6] o.s.w.s.m.SubProtocolWebSocketHandler    : Clearing session 939e564f-bf8f-aa77-72bf-2ff9107b010e
-2025-06-23T15:08:00.755-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-3] org.springframework.web.SimpLogging      : Processing DISCONNECT session=3d30ce68-1784-0fb9-66ae-12099262ede7
-2025-06-23T15:08:00.755-05:00 DEBUG 87006 --- [SkillLink] [nboundChannel-9] org.springframework.web.SimpLogging      : Processing DISCONNECT session=939e564f-bf8f-aa77-72bf-2ff9107b010e
-2025-06-23T15:08:00.756-05:00 DEBUG 87006 --- [SkillLink] [tboundChannel-8] o.s.w.s.m.SubProtocolWebSocketHandler    : No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpUser=UsernamePasswordAuthenticationToken [Principal=1, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_DEVELOPER]], simpSessionId=939e564f-bf8f-aa77-72bf-2ff9107b010e}], simpUser=UsernamePasswordAuthenticationToken [Principal=1, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_DEVELOPER]], simpSessionId=939e564f-bf8f-aa77-72bf-2ff9107b010e}]
-2025-06-23T15:08:00.756-05:00 DEBUG 87006 --- [SkillLink] [tboundChannel-7] o.s.w.s.m.SubProtocolWebSocketHandler    : No session for GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT_ACK, simpDisconnectMessage=GenericMessage [payload=byte[0], headers={simpMessageType=DISCONNECT, stompCommand=DISCONNECT, simpSessionAttributes={org.springframework.messaging.simp.SimpAttributes.COMPLETED=true}, simpUser=UsernamePasswordAuthenticationToken [Principal=2, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_DEVELOPER]], simpSessionId=3d30ce68-1784-0fb9-66ae-12099262ede7}], simpUser=UsernamePasswordAuthenticationToken [Principal=2, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_DEVELOPER]], simpSessionId=3d30ce68-1784-0fb9-66ae-12099262ede7}]
-2025-06-23T15:08:53.108-05:00  INFO 87006 --- [SkillLink] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 49 class path changes (0 additions, 0 deletions, 49 modifications)
-2025-06-23T15:08:53.111-05:00 DEBUG 87006 --- [SkillLink] [       Thread-5] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
-2025-06-23T15:08:53.111-05:00 DEBUG 87006 --- [SkillLink] [       Thread-5] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
-2025-06-23T15:08:53.111-05:00  INFO 87006 --- [SkillLink] [       Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
-2025-06-23T15:08:53.111-05:00  INFO 87006 --- [SkillLink] [       Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@44973b3c]]
-2025-06-23T15:08:53.111-05:00 DEBUG 87006 --- [SkillLink] [       Thread-5] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@44973b3c]
-2025-06-23T15:08:53.111-05:00 DEBUG 87006 --- [SkillLink] [       Thread-5] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@44973b3c]
-2025-06-23T15:08:53.111-05:00  INFO 87006 --- [SkillLink] [       Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
-2025-06-23T15:08:53.111-05:00 DEBUG 87006 --- [SkillLink] [       Thread-5] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
-2025-06-23T15:08:53.111-05:00 DEBUG 87006 --- [SkillLink] [       Thread-5] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
-2025-06-23T15:08:53.119-05:00  INFO 87006 --- [SkillLink] [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-23T15:08:53.122-05:00  WARN 87006 --- [SkillLink] [       Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
-Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
-2025-06-23T15:08:53.122-05:00  INFO 87006 --- [SkillLink] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-23T15:08:53.123-05:00  INFO 87006 --- [SkillLink] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.3.1)
-
-2025-06-23T15:08:53.205-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.bad.batch.SkillLinkApplication       : Starting SkillLinkApplication using Java 21.0.7 with PID 87006 (/home/farid/Git-Repository/alumnithon-bad-batch-backend/batch/target/classes started by farid in /home/farid/Git-Repository/alumnithon-bad-batch-backend/batch)
-2025-06-23T15:08:53.206-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.bad.batch.SkillLinkApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-06-23T15:08:53.353-05:00  INFO 87006 --- [SkillLink] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-23T15:08:53.365-05:00  INFO 87006 --- [SkillLink] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 3 JPA repository interfaces.
-2025-06-23T15:08:53.498-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-06-23T15:08:53.498-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-23T15:08:53.498-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2025-06-23T15:08:53.504-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-23T15:08:53.504-05:00  INFO 87006 --- [SkillLink] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 297 ms
-2025-06-23T15:08:53.529-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2025-06-23T15:08:53.531-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
-2025-06-23T15:08:53.531-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2025-06-23T15:08:53.531-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2025-06-23T15:08:53.564-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-23T15:08:53.565-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-23T15:08:53.570-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-23T15:08:53.682-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: com.bad.batch.model.entities.Profile (class must be instantiated by Interceptor)
-2025-06-23T15:08:53.747-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Hibernate: 
-    create table challenge_submissions (
-        id bigint generated by default as identity,
-        demo_url varchar(255),
-        description varchar(1000),
-        feedback varchar(255),
-        repository_url varchar(255),
-        reviewed_at timestamp(6),
-        score integer,
-        status enum ('APPROVED','REJECTED','SUBMITTED','UNDER_REVIEW'),
-        submitted_at timestamp(6),
-        participation_id bigint not null,
-        reviewer_id bigint,
-        primary key (id)
-    )
-Hibernate: 
-    create table chat_messages (
-        id bigint generated by default as identity,
-        is_system_message boolean,
-        message varchar(1000) not null,
-        timestamp timestamp(6),
-        type enum ('EMOJI','FILE','SYSTEM','TEXT'),
-        chat_room_id bigint not null,
-        sender_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table chat_rooms (
-        id bigint generated by default as identity,
-        created_at timestamp(6),
-        is_active boolean,
-        room_id varchar(255),
-        content_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table content_technologies (
-        content_id bigint not null,
-        required_technologies varchar(255)
-    )
-Hibernate: 
-    create table contents (
-        content_type varchar(31) not null,
-        id bigint generated by default as identity,
-        created_at timestamp(6),
-        description varchar(2000),
-        difficulty enum ('ADVANCED','BEGINNER','INTERMEDIATE'),
-        end_date timestamp(6),
-        max_participants integer,
-        start_date timestamp(6),
-        status enum ('ACTIVE','CLOSED','DRAFT','PUBLISHED'),
-        title varchar(255) not null,
-        updated_at timestamp(6),
-        acceptance_criteria varchar(2000),
-        allows_teams boolean,
-        problem_statement varchar(5000),
-        repository_template varchar(255),
-        type enum ('ARCHITECTURE','CODING','DESIGN'),
-        duration_minutes integer,
-        is_live boolean,
-        meeting_password varchar(255),
-        streaming_platform varchar(255),
-        streaming_room_id varchar(255),
-        streaming_url varchar(255),
-        creator_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table messages (
-        id bigint generated by default as identity,
-        challenge_id bigint,
-        content varchar(1000) not null,
-        conversation_type enum ('CHALLENGE','DIRECT','MENTORSHIP') not null,
-        created_at timestamp(6) not null,
-        edited_at timestamp(6),
-        is_deleted boolean not null,
-        is_read boolean not null,
-        is_system boolean not null,
-        mentorship_id bigint,
-        read_at timestamp(6),
-        type enum ('EMOJI','FILE','SYSTEM','TEXT') not null,
-        recipient_id bigint,
-        sender_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table participations (
-        id bigint generated by default as identity,
-        completed_at timestamp(6),
-        joined_at timestamp(6),
-        notes varchar(255),
-        progress_percentage numeric(38,2),
-        status enum ('COMPLETED','DROPPED','IN_PROGRESS','JOINED'),
-        content_id bigint not null,
-        user_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table profile_interests (
-        profile_id bigint not null,
-        interests varchar(255)
-    )
-Hibernate: 
-    create table profile_technologies (
-        profile_id bigint not null,
-        technologies varchar(255)
-    )
-Hibernate: 
-    create table profiles (
-        id bigint generated by default as identity,
-        bio varchar(255),
-        created_at timestamp(6),
-        experience_level enum ('INTERMEDIATE','JUNIOR','SENIOR'),
-        github_url varchar(255),
-        linkedin_url varchar(255),
-        location varchar(255),
-        objectives varchar(255),
-        personal_website varchar(255),
-        updated_at timestamp(6),
-        visibility enum ('PRIVATE','PUBLIC'),
-        user_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table rankings (
-        id bigint generated by default as identity,
-        category varchar(255),
-        last_updated timestamp(6),
-        points integer,
-        position integer,
-        score numeric(38,2),
-        type enum ('CHALLENGE_SPECIFIC','GLOBAL','TECHNOLOGY_SPECIFIC'),
-        challenge_id bigint,
-        user_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table streaming_sessions (
-        id bigint generated by default as identity,
-        actual_start timestamp(6),
-        current_viewers integer,
-        ended_at timestamp(6),
-        max_viewers integer,
-        recording_url varchar(255),
-        scheduled_start timestamp(6),
-        session_id varchar(255),
-        status enum ('ENDED','LIVE','RECORDED','SCHEDULED'),
-        streaming_config varchar(255),
-        streaming_url varchar(255),
-        mentorship_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table user_stats (
-        id bigint generated by default as identity,
-        average_challenge_score numeric(38,2),
-        challenges_completed integer,
-        challenges_created integer,
-        global_rank integer,
-        last_updated timestamp(6),
-        mentorships_attended integer,
-        mentorships_completed integer,
-        mentorships_created integer,
-        total_challenge_score integer,
-        total_points integer,
-        user_id bigint not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table users (
-        id bigint generated by default as identity,
-        created_at timestamp(6),
-        email varchar(255) not null,
-        first_name varchar(30) not null,
-        is_active boolean not null,
-        last_name varchar(30) not null,
-        password varchar(255) not null,
-        role enum ('ADMIN','DEVELOPER','MENTOR'),
-        updated_at timestamp(6),
-        primary key (id)
-    )
-Hibernate: 
-    create index idx_sender_created 
-       on messages (sender_id, created_at)
-Hibernate: 
-    create index idx_recipient_created 
-       on messages (recipient_id, created_at)
-Hibernate: 
-    create index idx_challenge_created 
-       on messages (challenge_id, created_at)
-Hibernate: 
-    create index idx_mentorship_created 
-       on messages (mentorship_id, created_at)
-Hibernate: 
-    create index idx_conversation_type 
-       on messages (conversation_type, created_at)
-Hibernate: 
-    alter table if exists profiles 
-       drop constraint if exists UK4ixsj6aqve5pxrbw2u0oyk8bb
-Hibernate: 
-    alter table if exists profiles 
-       add constraint UK4ixsj6aqve5pxrbw2u0oyk8bb unique (user_id)
-Hibernate: 
-    alter table if exists user_stats 
-       drop constraint if exists UKcgfgfs7fk42h7ck71lrs42sou
-Hibernate: 
-    alter table if exists user_stats 
-       add constraint UKcgfgfs7fk42h7ck71lrs42sou unique (user_id)
-Hibernate: 
-    alter table if exists users 
-       drop constraint if exists UK6dotkott2kjsp8vw4d0m25fb7
-Hibernate: 
-    alter table if exists users 
-       add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
-Hibernate: 
-    alter table if exists challenge_submissions 
-       add constraint FK4qc9646g52mms427hamn2phk5 
-       foreign key (participation_id) 
-       references participations
-Hibernate: 
-    alter table if exists challenge_submissions 
-       add constraint FKl4aic0exm4syamnjdeg17a9qo 
-       foreign key (reviewer_id) 
-       references users
-Hibernate: 
-    alter table if exists chat_messages 
-       add constraint FKbcsxusjp1v4rd8879fhvq8ssb 
-       foreign key (chat_room_id) 
-       references chat_rooms
-Hibernate: 
-    alter table if exists chat_messages 
-       add constraint FKgiqeap8ays4lf684x7m0r2729 
-       foreign key (sender_id) 
-       references users
-Hibernate: 
-    alter table if exists chat_rooms 
-       add constraint FKc6hc5uajy9cnaff2fawswn0hi 
-       foreign key (content_id) 
-       references contents
-Hibernate: 
-    alter table if exists content_technologies 
-       add constraint FKglg9qeh79p54e196t1q1xm5mu 
-       foreign key (content_id) 
-       references contents
-Hibernate: 
-    alter table if exists contents 
-       add constraint FKkqm93m7ef9b4cdp2ij0stmbgq 
-       foreign key (creator_id) 
-       references users
-Hibernate: 
-    alter table if exists messages 
-       add constraint FKhdkwfnspwb3s60j27vpg0rpg6 
-       foreign key (recipient_id) 
-       references users
-Hibernate: 
-    alter table if exists messages 
-       add constraint FK4ui4nnwntodh6wjvck53dbk9m 
-       foreign key (sender_id) 
-       references users
-Hibernate: 
-    alter table if exists participations 
-       add constraint FKh50vtca8pcgkvkfegh1tkuls0 
-       foreign key (content_id) 
-       references contents
-Hibernate: 
-    alter table if exists participations 
-       add constraint FK166yf958qjqf8uoslyuk9e19p 
-       foreign key (user_id) 
-       references users
-Hibernate: 
-    alter table if exists profile_interests 
-       add constraint FKlq3dpdqs7v6fh5207ojjuyljs 
-       foreign key (profile_id) 
-       references profiles
-Hibernate: 
-    alter table if exists profile_technologies 
-       add constraint FKiwbedflxm2b2th6gcaip49hhv 
-       foreign key (profile_id) 
-       references profiles
-Hibernate: 
-    alter table if exists profiles 
-       add constraint FK410q61iev7klncmpqfuo85ivh 
-       foreign key (user_id) 
-       references users
-Hibernate: 
-    alter table if exists rankings 
-       add constraint FK4nhu6lyrndiywtxrnpok8604r 
-       foreign key (challenge_id) 
-       references contents
-Hibernate: 
-    alter table if exists rankings 
-       add constraint FKcup4ei1jmensgunlbncpb5rnv 
-       foreign key (user_id) 
-       references users
-Hibernate: 
-    alter table if exists streaming_sessions 
-       add constraint FKrf82um8wwncyr5ssveron3tss 
-       foreign key (mentorship_id) 
-       references contents
-Hibernate: 
-    alter table if exists user_stats 
-       add constraint FKj277c5rcqlsvwkk3hj39e2b74 
-       foreign key (user_id) 
-       references users
-2025-06-23T15:08:53.774-05:00  INFO 87006 --- [SkillLink] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-23T15:08:54.057-05:00  WARN 87006 --- [SkillLink] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-23T15:08:54.066-05:00  INFO 87006 --- [SkillLink] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
-2025-06-23T15:08:54.080-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/ws/**] in 'stompWebSocketHandlerMapping'
-2025-06-23T15:08:54.109-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 25 mappings in 'requestMappingHandlerMapping'
-2025-06-23T15:08:54.128-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2025-06-23T15:08:54.147-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
-2025-06-23T15:08:54.165-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
-	c.b.b.c.MessageController:
-	
-2025-06-23T15:08:54.165-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
-	c.b.b.c.ProfileController:
-	
-2025-06-23T15:08:54.165-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
-	c.b.b.c.UserController:
-	
-2025-06-23T15:08:54.165-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
-	c.b.b.c.s.AuthApiController:
-	
-2025-06-23T15:08:54.165-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
-	c.b.b.w.c.ChatController:
-	{[MESSAGE],[/chat.join]}: joinChat(JoinChatRequest,Principal)
-	{[MESSAGE],[/chat.leave]}: leaveChat(JoinChatRequest,Principal)
-	{[MESSAGE],[/chat.direct]}: sendDirectMessage(ChatMessageRequest,Principal)
-	{[MESSAGE],[/chat.challenge]}: sendChallengeMessage(ChatMessageRequest,Principal)
-	{[MESSAGE],[/chat.mentorship]}: sendMentorshipMessage(ChatMessageRequest,Principal)
-2025-06-23T15:08:54.165-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
-	o.s.b.a.w.s.e.BasicErrorController:
-	
-2025-06-23T15:08:54.166-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
-	o.s.w.a.OpenApiWebMvcResource:
-	
-2025-06-23T15:08:54.166-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
-	o.s.w.u.SwaggerWelcomeWebMvc:
-	
-2025-06-23T15:08:54.166-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .WebSocketAnnotationMethodMessageHandler : 
-	o.s.w.u.SwaggerConfigResource:
-	
-2025-06-23T15:08:54.187-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-06-23T15:08:54.193-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-06-23T15:08:54.248-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-06-23T15:08:54.255-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-06-23T15:08:54.255-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
-2025-06-23T15:08:54.255-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
-2025-06-23T15:08:54.255-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2025-06-23T15:08:54.255-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@39c539a6]
-2025-06-23T15:08:54.255-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@39c539a6]
-2025-06-23T15:08:54.255-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@39c539a6]]
-2025-06-23T15:08:54.255-05:00  INFO 87006 --- [SkillLink] [  restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2025-06-23T15:08:54.255-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
-2025-06-23T15:08:54.255-05:00 DEBUG 87006 --- [SkillLink] [  restartedMain] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
-2025-06-23T15:08:54.257-05:00  INFO 87006 --- [SkillLink] [  restartedMain] com.bad.batch.SkillLinkApplication       : Started SkillLinkApplication in 1.067 seconds (process running for 133.821)
-2025-06-23T15:08:54.258-05:00  INFO 87006 --- [SkillLink] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-06-23T15:09:54.253-05:00  INFO 87006 --- [SkillLink] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2025-06-24T23:40:17.492-05:00  INFO 212880 --- [SkillLink] [nio-8080-exec-5] c.b.b.c.s.JwtAuthenticationFilter        : User juan.perez@example.com successfully authenticated with role DEVELOPER.
+2025-06-24T23:40:17.492-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/contents
+2025-06-24T23:40:17.492-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/contents", parameters={}
+2025-06-24T23:40:17.493-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bad.batch.controller.ContentController#createContent(ContentRequest)
+2025-06-24T23:40:17.500-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.bad.batch.dto.response.ContentResponse> com.bad.batch.controller.ContentController.createContent(com.bad.batch.dto.request.ContentRequest): JSON parse error: Cannot deserialize value of type `com.bad.batch.model.enums.MentorshipType` from String "INDIVIDUAL": not one of the values accepted for Enum class: [WEBINAR, GROUP, ONE_ON_ONE]
+2025-06-24T23:40:17.500-05:00  WARN 212880 --- [SkillLink] [nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.bad.batch.model.enums.MentorshipType` from String "INDIVIDUAL": not one of the values accepted for Enum class: [WEBINAR, GROUP, ONE_ON_ONE]]
+2025-06-24T23:40:17.500-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-06-24T23:40:17.500-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-06-24T23:40:17.501-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /error
+2025-06-24T23:40:17.501-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-06-24T23:40:17.501-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-06-24T23:40:17.502-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-24T23:40:17.502-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jun 24 23:40:17 COT 2025, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2025-06-24T23:40:17.503-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2025-06-24T23:40:17.503-05:00 DEBUG 212880 --- [SkillLink] [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-06-24T23:41:37.567-05:00 DEBUG 212880 --- [SkillLink] [ionShutdownHook] org.springframework.web.SimpLogging      : clientOutboundChannel removed SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2025-06-24T23:41:37.567-05:00 DEBUG 212880 --- [SkillLink] [ionShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2025-06-24T23:41:37.567-05:00  INFO 212880 --- [SkillLink] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-06-24T23:41:37.567-05:00  INFO 212880 --- [SkillLink] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2807faff]]
+2025-06-24T23:41:37.567-05:00 DEBUG 212880 --- [SkillLink] [ionShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2807faff]
+2025-06-24T23:41:37.567-05:00 DEBUG 212880 --- [SkillLink] [ionShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@2807faff]
+2025-06-24T23:41:37.567-05:00  INFO 212880 --- [SkillLink] [ionShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-06-24T23:41:37.567-05:00 DEBUG 212880 --- [SkillLink] [ionShutdownHook] org.springframework.web.SimpLogging      : clientInboundChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2025-06-24T23:41:37.567-05:00 DEBUG 212880 --- [SkillLink] [ionShutdownHook] org.springframework.web.SimpLogging      : brokerChannel removed UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2025-06-24T23:41:37.571-05:00  INFO 212880 --- [SkillLink] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-24T23:41:37.574-05:00  INFO 212880 --- [SkillLink] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-24T23:41:37.575-05:00  INFO 212880 --- [SkillLink] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
