@@ -14,7 +14,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import com.bad.batch.model.entities.ChatRoom;
+import com.bad.batch.model.entities.ChatMessage;
+import com.bad.batch.model.entities.Content;
+import com.bad.batch.model.entities.User;
+import com.bad.batch.model.enums.ChatMessageType;
+import com.bad.batch.repository.ChatRoomRepository;
+import com.bad.batch.repository.ChatMessageRepository;
+import com.bad.batch.repository.ContentRepository;
+import com.bad.batch.repository.UserRepository;
+import java.util.Map;
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/api/messages")
@@ -25,6 +39,10 @@ public class MessageController {
     
     private final MessageHistoryService messageHistoryService;
     private final ChatService chatService;
+    private final ChatRoomRepository chatRoomRepository;
+    private final ChatMessageRepository chatMessageRepository;
+    private final ContentRepository contentRepository;
+    private final UserRepository userRepository;
 
     @GetMapping("/direct/{otherUserId}")
     @Operation(
@@ -178,6 +196,107 @@ public class MessageController {
         }
         
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/test/create-chat-room")
+    @Operation(
+        summary = "Crear sala de chat (Test)",
+        description = "Crea una sala de chat y mensajes de prueba para un contenido específico."
+    )
+    public ResponseEntity<String> createChatRoomTest(
+            @RequestParam Long contentId,
+            HttpServletRequest request) {
+        
+        Long currentUserId = extractUserIdFromRequest(request);
+        
+        // 1. Buscar el contenido
+        Content content = contentRepository.findById(contentId)
+                .orElseThrow(() -> new RuntimeException("Contenido no encontrado"));
+        
+        // 2. Crear o buscar ChatRoom para este contenido
+        ChatRoom chatRoom = chatRoomRepository.findByContentId(contentId)
+                .orElseGet(() -> {
+                    ChatRoom newRoom = new ChatRoom();
+                    newRoom.setContent(content);
+                    newRoom.setRoomId("room_" + contentId + "_" + System.currentTimeMillis());
+                    newRoom.setIsActive(true);
+                    return chatRoomRepository.save(newRoom);
+                });
+        
+        // 3. Buscar el usuario
+        User user = userRepository.findById(currentUserId)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        
+        // 4. Crear algunos mensajes de prueba
+        ChatMessage message1 = new ChatMessage();
+        message1.setChatRoom(chatRoom);
+        message1.setSender(user);
+        message1.setMessage("¡Hola! Este es el primer mensaje en la sala de chat para: " + content.getTitle());
+        message1.setType(ChatMessageType.TEXT);
+        message1.setIsSystemMessage(false);
+        chatMessageRepository.save(message1);
+        
+        ChatMessage message2 = new ChatMessage();
+        message2.setChatRoom(chatRoom);
+        message2.setSender(user);
+        message2.setMessage("¿Alguien más está participando en este " + content.getType().toString().toLowerCase() + "?");
+        message2.setType(ChatMessageType.TEXT);
+        message2.setIsSystemMessage(false);
+        chatMessageRepository.save(message2);
+        
+        ChatMessage systemMessage = new ChatMessage();
+        systemMessage.setChatRoom(chatRoom);
+        systemMessage.setSender(user);
+        systemMessage.setMessage("Sala de chat creada para: " + content.getTitle());
+        systemMessage.setType(ChatMessageType.SYSTEM);
+        systemMessage.setIsSystemMessage(true);
+        chatMessageRepository.save(systemMessage);
+        
+        return ResponseEntity.ok("Sala de chat creada exitosamente. ID: " + chatRoom.getId() + 
+                               ", Room ID: " + chatRoom.getRoomId() + 
+                               ", Mensajes creados: 3");
+    }
+
+    @GetMapping("/test/chat-rooms")
+    @Operation(
+        summary = "Listar salas de chat (Test)",
+        description = "Lista todas las salas de chat con sus mensajes para verificar la persistencia."
+    )
+    public ResponseEntity<Map<String, Object>> getChatRoomsTest() {
+        
+        List<ChatRoom> chatRooms = chatRoomRepository.findAll();
+        Map<String, Object> result = new HashMap<>();
+        
+        result.put("totalChatRooms", chatRooms.size());
+        result.put("chatRooms", chatRooms.stream().map(room -> {
+            Map<String, Object> roomData = new HashMap<>();
+            roomData.put("id", room.getId());
+            roomData.put("roomId", room.getRoomId());
+            roomData.put("contentId", room.getContent().getId());
+            roomData.put("contentTitle", room.getContent().getTitle());
+            roomData.put("contentType", room.getContent().getType());
+            roomData.put("isActive", room.getIsActive());
+            roomData.put("createdAt", room.getCreatedAt());
+            
+            // Obtener mensajes de esta sala
+            List<ChatMessage> messages = chatMessageRepository.findByChatRoomIdOrderByTimestampDesc(room.getId());
+            roomData.put("totalMessages", messages.size());
+            roomData.put("messages", messages.stream().map(msg -> {
+                Map<String, Object> msgData = new HashMap<>();
+                msgData.put("id", msg.getId());
+                msgData.put("message", msg.getMessage());
+                msgData.put("type", msg.getType());
+                msgData.put("senderId", msg.getSender().getId());
+                msgData.put("senderName", msg.getSender().getFirstName() + " " + msg.getSender().getLastName());
+                msgData.put("isSystemMessage", msg.getIsSystemMessage());
+                msgData.put("timestamp", msg.getTimestamp());
+                return msgData;
+            }).toList());
+            
+            return roomData;
+        }).toList());
+        
+        return ResponseEntity.ok(result);
     }
 
     private Long extractUserIdFromRequest(HttpServletRequest request) {
