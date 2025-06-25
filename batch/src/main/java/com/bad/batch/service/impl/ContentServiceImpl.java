@@ -107,12 +107,16 @@ public class ContentServiceImpl implements ContentService {
     @Override
     public List<Content> getAllContents() {
         try {
-            return contentRepository.findAll();
+            List<Content> contents = contentRepository.findAll();
+            if (contents == null) {
+                return new ArrayList<>();
+            }
+            return contents;
         } catch (Exception e) {
-            // Manejo de errores: registrar la excepción y devolver una lista vacía
+            // Manejo de errores: registrar la excepción pero relanzar para que el controlador maneje
             System.err.println("Error al obtener todos los contenidos: " + e.getMessage());
             e.printStackTrace();
-            return new ArrayList<>();
+            throw new RuntimeException("Error al acceder a la base de datos para obtener contenidos", e);
         }
     }
 
