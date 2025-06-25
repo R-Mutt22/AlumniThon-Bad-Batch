@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 public class ContentServiceImpl implements ContentService {
@@ -154,27 +153,33 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public ContentResponse toResponse(Content content) {
-        try {
-            ContentResponse response = new ContentResponse();
-            
-            // Solo campos básicos por ahora para evitar errores de Lombok
-            response.setId(content.getId());
-            response.setTitle("Contenido " + content.getId());
-            response.setDescription("Descripción del contenido");
-            response.setCreatorId(1L);
-            response.setCreatorName("Usuario Test");
-            response.setStatus("PUBLISHED");
-            
-            return response;
-        } catch (Exception e) {
-            // Si todo falla, crear una respuesta mínima
-            ContentResponse fallbackResponse = new ContentResponse();
-            fallbackResponse.setId(content != null ? content.getId() : null);
-            fallbackResponse.setTitle("Error al cargar contenido");
-            fallbackResponse.setDescription("Error interno");
-            fallbackResponse.setStatus("ERROR");
-            return fallbackResponse;
+        ContentResponse response = new ContentResponse();
+        response.setId(content.getId());
+        response.setTitle(content.getTitle());
+        response.setDescription(content.getDescription());
+        response.setCreatorId(content.getCreator() != null ? content.getCreator().getId() : null);
+        response.setCreatorName(content.getCreator() != null ? content.getCreator().getFullName() : null);
+        response.setStatus(content.getStatus() != null ? content.getStatus().name() : null);
+        response.setDifficulty(content.getDifficulty() != null ? content.getDifficulty().name() : null);
+        response.setRequiredTechnologies(content.getRequiredTechnologies());
+        response.setMaxParticipants(content.getMaxParticipants());
+        response.setStartDate(content.getStartDate());
+        response.setEndDate(content.getEndDate());
+        response.setCreatedAt(content.getCreatedAt());
+        response.setUpdatedAt(content.getUpdatedAt());
+        response.setType(content.getType());
+        // Mapear campos específicos según el tipo
+        if (content instanceof Mentorship mentorship) {
+            response.setDurationMinutes(mentorship.getDurationMinutes());
+            response.setMentorshipType(mentorship.getMentorshipType());
+            response.setIsLive(mentorship.getIsLive());
+        } else if (content instanceof Challenge challenge) {
+            response.setProblemStatement(challenge.getProblemStatement());
+            response.setAcceptanceCriteria(challenge.getAcceptanceCriteria());
+            response.setAllowsTeams(challenge.getAllowsTeams());
+            response.setChallengeType(challenge.getChallengeType());
         }
+        return response;
     }
 
     private void mapRequestToContent(ContentRequest request, Content content) {
