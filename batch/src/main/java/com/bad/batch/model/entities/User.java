@@ -46,6 +46,7 @@ public class User implements UserDetails { // Correcto que implemente UserDetail
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
+    @Builder.Default
     @Column(nullable = false)
     private Boolean isActive = true;
 
@@ -114,5 +115,9 @@ public class User implements UserDetails { // Correcto que implemente UserDetail
     public boolean isEnabled() {
         // Implementación correcta: Mapea a tu campo 'isActive'
         return isActive;
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 }

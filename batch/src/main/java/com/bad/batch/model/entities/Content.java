@@ -1,6 +1,7 @@
 package com.bad.batch.model.entities;
 
 import com.bad.batch.model.enums.ContentStatus;
+import com.bad.batch.model.enums.ContentType;
 import com.bad.batch.model.enums.DifficultyLevel;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -52,4 +53,8 @@ public class Content {
 
     @OneToMany(mappedBy = "content", cascade = CascadeType.ALL)
     private Set<Participation> participations;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type", nullable = false)
+    private ContentType type;
 }
