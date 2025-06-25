@@ -1,0 +1,47 @@
+# Archivos de build y dependencias
+target/
+.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+!.mvn/wrapper/MavenWrapperDownloader.java
+
+# Archivos del IDE
+.vscode/
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Logs
+*.log
+logs/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Archivos de entorno local
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Documentación
+README.md
+*.md
+
+# Archivos temporales
+*.tmp
+*.swp
+*.swo
+
+# Node modules (si existen)
+node_modules/
+npm-debug.log*
+
+# Archivos de Docker
+Dockerfile
+.dockerignore
