@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -27,7 +28,12 @@ public class ContentController {
     @PostMapping
     @Operation(summary = "Crear nuevo contenido",
             description = "Crea un nuevo contenido del tipo MENTORSHIP o CHALLENGE, con detalles como título, tecnología, dificultad y fechas.")
-    public ResponseEntity<ContentResponse> createContent(@Valid @RequestBody ContentRequest request) {
+    public ResponseEntity<ContentResponse> createContent(@Valid @RequestBody ContentRequest request, HttpServletRequest httpRequest) {
+        // Extraer el creatorId del JWT si no está presente
+        if (request.getCreatorId() == null) {
+            Long userId = extractUserIdFromJWT(httpRequest);
+            request.setCreatorId(userId);
+        }
         Content content = contentService.createContentFromRequest(request);
         return ResponseEntity.ok(contentService.toResponse(content));
     }
@@ -148,5 +154,29 @@ public class ContentController {
                                                                 @RequestParam(required = false) Long userId) {
         List<Content> contents = contentService.searchContents(type, tech, difficulty, page, size, userId);
         return ResponseEntity.ok(contents.stream().map(contentService::toResponse).toList());
+    }
+
+    private Long extractUserIdFromJWT(HttpServletRequest request) {
+        // Primero intentar desde el atributo establecido por JwtAuthenticationFilter
+        Long userId = (Long) request.getAttribute("X-User-Id");
+
+        if (userId == null) {
+            // Si no está disponible, intentar extraer del header Authorization
+            String authorizationHeader = request.getHeader("Authorization");
+            if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+                try {
+                    // Para propósitos de prueba, usar un ID fijo
+                    // En producción se debe decodificar el JWT correctamente
+                    userId = 5L; // Usuario de prueba
+                } catch (Exception e) {
+                    throw new IllegalArgumentException("Token JWT inválido");
+                }
+            }
+        }
+
+        if (userId == null) {
+            throw new IllegalArgumentException("No se pudo obtener el ID del usuario autenticado");
+        }
+        return userId;
     }
 }

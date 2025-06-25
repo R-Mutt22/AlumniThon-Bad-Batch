@@ -286,16 +286,19 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public void joinContent(Long contentId, Long userId) {
-
+        // Implementación simplificada sin verificaciones complejas por ahora
+        // Se puede expandir después
+        System.out.println("User " + userId + " attempting to join content " + contentId);
     }
 
     @Override
     public void leaveContent(Long contentId, Long userId) {
-
+        System.out.println("User " + userId + " attempting to leave content " + contentId);
     }
 
     @Override
     public List<Long> getParticipants(Long contentId) {
+        // Retornar lista vacía por ahora, se puede implementar después
         return List.of();
     }
 
