@@ -1,6 +1,8 @@
 package com.bad.batch.controller;
 
+import com.bad.batch.websocket.dto.ChatMessageRequest;
 import com.bad.batch.websocket.dto.ChatMessageResponse;
+import com.bad.batch.websocket.service.ChatService;
 import com.bad.batch.websocket.service.MessageHistoryService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -22,6 +24,7 @@ import java.util.List;
 public class MessageController {
     
     private final MessageHistoryService messageHistoryService;
+    private final ChatService chatService;
 
     @GetMapping("/direct/{otherUserId}")
     @Operation(
@@ -151,6 +154,30 @@ public class MessageController {
         );
         
         return ResponseEntity.ok(messages);
+    }
+
+    @PostMapping("/test/send")
+    @Operation(
+        summary = "Enviar mensaje (Test)",
+        description = "Envía un mensaje de prueba. Este endpoint es solo para propósitos de testing."
+    )
+    public ResponseEntity<ChatMessageResponse> sendTestMessage(
+            @RequestBody ChatMessageRequest messageRequest,
+            HttpServletRequest request) {
+        
+        Long currentUserId = extractUserIdFromRequest(request);
+        ChatMessageResponse response;
+        
+        // Determinar qué tipo de mensaje enviar basado en los campos del request
+        if (messageRequest.getChallengeId() != null) {
+            response = chatService.sendChallengeMessage(currentUserId, messageRequest);
+        } else if (messageRequest.getMentorshipId() != null) {
+            response = chatService.sendMentorshipMessage(currentUserId, messageRequest);
+        } else {
+            response = chatService.sendDirectMessage(currentUserId, messageRequest);
+        }
+        
+        return ResponseEntity.ok(response);
     }
 
     private Long extractUserIdFromRequest(HttpServletRequest request) {
