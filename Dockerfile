@@ -1,7 +1,7 @@
 # Dockerfile multi-stage para aplicación Spring Boot
 
 # Etapa 1: Build de la aplicación
-FROM maven:3.9.4-openjdk-21-slim AS build
+FROM maven:3.9-eclipse-temurin-21-alpine AS build
 
 # Establecer directorio de trabajo
 WORKDIR /app
@@ -22,13 +22,13 @@ COPY batch/src ./src
 RUN mvn clean package -DskipTests
 
 # Etapa 2: Runtime con imagen optimizada
-FROM openjdk:21-jre-slim
+FROM eclipse-temurin:21-jre-alpine
 
 # Crear usuario no-root para seguridad
-RUN addgroup --system spring && adduser --system spring --ingroup spring
+RUN addgroup --system spring && adduser --system spring --ingroup spring --no-create-home
 
 # Instalar curl para health checks
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+RUN apk update && apk add --no-cache curl
 
 # Establecer directorio de trabajo
 WORKDIR /app
