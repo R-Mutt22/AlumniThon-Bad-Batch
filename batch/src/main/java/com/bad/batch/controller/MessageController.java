@@ -14,9 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.bad.batch.model.entities.ChatRoom;
 import com.bad.batch.model.entities.ChatMessage;
@@ -27,8 +25,6 @@ import com.bad.batch.repository.ChatRoomRepository;
 import com.bad.batch.repository.ChatMessageRepository;
 import com.bad.batch.repository.ContentRepository;
 import com.bad.batch.repository.UserRepository;
-import java.util.Map;
-import java.util.HashMap;
 
 @RestController
 @RequestMapping("/api/messages")
@@ -255,48 +251,6 @@ public class MessageController {
         return ResponseEntity.ok("Sala de chat creada exitosamente. ID: " + chatRoom.getId() + 
                                ", Room ID: " + chatRoom.getRoomId() + 
                                ", Mensajes creados: 3");
-    }
-
-    @GetMapping("/test/chat-rooms")
-    @Operation(
-        summary = "Listar salas de chat (Test)",
-        description = "Lista todas las salas de chat con sus mensajes para verificar la persistencia."
-    )
-    public ResponseEntity<Map<String, Object>> getChatRoomsTest() {
-        
-        List<ChatRoom> chatRooms = chatRoomRepository.findAll();
-        Map<String, Object> result = new HashMap<>();
-        
-        result.put("totalChatRooms", chatRooms.size());
-        result.put("chatRooms", chatRooms.stream().map(room -> {
-            Map<String, Object> roomData = new HashMap<>();
-            roomData.put("id", room.getId());
-            roomData.put("roomId", room.getRoomId());
-            roomData.put("contentId", room.getContent().getId());
-            roomData.put("contentTitle", room.getContent().getTitle());
-            roomData.put("contentType", room.getContent().getType());
-            roomData.put("isActive", room.getIsActive());
-            roomData.put("createdAt", room.getCreatedAt());
-            
-            // Obtener mensajes de esta sala
-            List<ChatMessage> messages = chatMessageRepository.findByChatRoomIdOrderByTimestampDesc(room.getId());
-            roomData.put("totalMessages", messages.size());
-            roomData.put("messages", messages.stream().map(msg -> {
-                Map<String, Object> msgData = new HashMap<>();
-                msgData.put("id", msg.getId());
-                msgData.put("message", msg.getMessage());
-                msgData.put("type", msg.getType());
-                msgData.put("senderId", msg.getSender().getId());
-                msgData.put("senderName", msg.getSender().getFirstName() + " " + msg.getSender().getLastName());
-                msgData.put("isSystemMessage", msg.getIsSystemMessage());
-                msgData.put("timestamp", msg.getTimestamp());
-                return msgData;
-            }).toList());
-            
-            return roomData;
-        }).toList());
-        
-        return ResponseEntity.ok(result);
     }
 
     private Long extractUserIdFromRequest(HttpServletRequest request) {

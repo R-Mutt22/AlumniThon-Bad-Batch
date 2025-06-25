@@ -53,6 +53,10 @@ public class SecurityConfig {
                                 "/error",
                                 "/actuator/**"
                         ).permitAll()
+                        // Keep-alive endpoint
+                        .requestMatchers(
+                                "/api/keep-alive/**"
+                        ).permitAll()
                         // Cualquier otra ruta requiere autenticación
                         .anyRequest().authenticated()
                 )
