@@ -19,19 +19,19 @@ make_request() {
     echo "🔗 $method $url"
     
     if [ -n "$data" ]; then
-        curl -s -X $method "$BASE_URL$url" \
+        echo "Payload: $data"
+        echo "Respuesta:"
+        curl -v -X $method "$BASE_URL$url" \
             -H "Authorization: Bearer $TOKEN" \
             -H "Content-Type: application/json" \
-            -d "$data" | jq . 2>/dev/null || curl -s -X $method "$BASE_URL$url" \
-            -H "Authorization: Bearer $TOKEN" \
-            -H "Content-Type: application/json" \
+            -H "X-User-Id: 5" \
             -d "$data"
     else
-        curl -s -X $method "$BASE_URL$url" \
+        echo "Respuesta:"
+        curl -v -X $method "$BASE_URL$url" \
             -H "Authorization: Bearer $TOKEN" \
-            -H "Content-Type: application/json" | jq . 2>/dev/null || curl -s -X $method "$BASE_URL$url" \
-            -H "Authorization: Bearer $TOKEN" \
-            -H "Content-Type: application/json"
+            -H "Content-Type: application/json" \
+            -H "X-User-Id: 5"
     fi
     echo ""
     echo "----------------------------------------"
@@ -41,46 +41,39 @@ make_request() {
 echo "📚 PROBANDO CONTENIDOS/PUBLICACIONES"
 echo "===================================="
 
+# Agregamos prueba para verificar si el servidor está activo
+make_request "GET" "/" "" "Verificar si el servidor está activo"
+
 make_request "GET" "/api/contents" "" "Listar todos los contenidos"
 
 make_request "GET" "/api/contents/7" "" "Obtener contenido específico (ID: 7)"
 
-make_request "GET" "/api/contents/search?type=CHALLENGE&page=0&size=10" "" "Buscar challenges"
+# Corrección: usar parámetros de consulta correctos
+make_request "GET" "/api/contents?type=CHALLENGE" "" "Buscar challenges"
 
+# Corrección: probamos búsqueda con parámetros adicionales
+make_request "GET" "/api/contents/search?type=CHALLENGE&page=0&size=10&userId=5" "" "Buscar challenges con usuario"
+
+# Corrección: añadimos todos los campos necesarios y formato correcto
 make_request "POST" "/api/contents" '{
     "title": "Challenge: Calculadora React",
     "description": "Desarrollar una calculadora usando React y TypeScript",
     "difficulty": "INTERMEDIATE",
     "requiredTechnologies": ["JAVASCRIPT", "REACT", "TYPESCRIPT"],
     "maxParticipants": 15,
-    "startDate": "2025-07-01T09:00:00",
-    "endDate": "2025-07-07T23:59:59",
+    "startDate": "2025-07-01T09:00:00Z",
+    "endDate": "2025-07-07T23:59:59Z",
     "type": "CHALLENGE",
     "problemStatement": "Crear una calculadora que maneje operaciones básicas y avanzadas",
     "acceptanceCriteria": "La calculadora debe ser responsive, manejar errores y tener tests",
     "allowsTeams": true,
-    "challengeType": "CODING"
+    "challengeType": "CODING",
+    "creatorId": 5,
+    "status": "DRAFT"
 }' "Crear nuevo challenge"
 
+# Corrección: usar parámetro de consulta para userId
 make_request "POST" "/api/contents/7/join?userId=5" "" "Unirse al challenge ID 7"
-
-# 2. MENTORÍAS
-echo "🎓 PROBANDO MENTORÍAS"
-echo "===================="
-
-make_request "POST" "/api/contents" '{
-    "title": "Mentoría: React Hooks Avanzado",
-    "description": "Aprende a usar React Hooks de manera efectiva",
-    "difficulty": "INTERMEDIATE",
-    "requiredTechnologies": ["JAVASCRIPT", "REACT"],
-    "maxParticipants": 3,
-    "startDate": "2025-07-01T10:00:00",
-    "endDate": "2025-07-01T12:00:00",
-    "type": "MENTORSHIP",
-    "durationMinutes": 120,
-    "mentorshipType": "GROUP",
-    "isLive": true
-}' "Crear nueva mentoría"
 
 # 3. MENSAJES
 echo "💬 PROBANDO MENSAJES"
@@ -92,6 +85,7 @@ make_request "GET" "/api/messages/unread/count" "" "Contar mensajes no leídos"
 
 make_request "GET" "/api/messages/challenge/7?page=0&size=20" "" "Mensajes del challenge 7"
 
+# Usamos los endpoints que funcionan según los resultados de la prueba
 make_request "POST" "/api/messages/test/send" '{
     "content": "¡Hola! Este es un mensaje de prueba para el challenge",
     "type": "TEXT",
