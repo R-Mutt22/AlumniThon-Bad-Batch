@@ -2,7 +2,7 @@
 
 # Script para probar todos los endpoints de SkillLink
 BASE_URL="https://alumnithon-bad-batch-backend.onrender.com"
-TOKEN="eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1IiwidXNlcklkIjo1LCJyb2xlIjoiREVWRUxPUEVSIiwiaWF0IjoxNzUwODc0NTA5LCJleHAiOjE3NTE3Mzg1MDl9.x-yHJU90pOj54C1mTc6t3-76sb05AOphzn4lcxgweJg"
+TOKEN="eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwidXNlcklkIjoxLCJyb2xlIjoiREVWRUxPUEVSIiwiaWF0IjoxNzUwODk1MTQwLCJleHAiOjE3NTE3NTkxNDB9._muXiRGjtjSk6aSJYyHpB-UK4XxeXD2FRtDfmWZkPFM"
 
 echo "🚀 Iniciando pruebas de endpoints de SkillLink"
 echo "============================================="
@@ -24,14 +24,14 @@ make_request() {
         curl -v -X $method "$BASE_URL$url" \
             -H "Authorization: Bearer $TOKEN" \
             -H "Content-Type: application/json" \
-            -H "X-User-Id: 5" \
+            -H "X-User-Id: 1" \
             -d "$data"
     else
         echo "Respuesta:"
         curl -v -X $method "$BASE_URL$url" \
             -H "Authorization: Bearer $TOKEN" \
             -H "Content-Type: application/json" \
-            -H "X-User-Id: 5"
+            -H "X-User-Id: 1"
     fi
     echo ""
     echo "----------------------------------------"
@@ -52,7 +52,7 @@ make_request "GET" "/api/contents/7" "" "Obtener contenido específico (ID: 7)"
 make_request "GET" "/api/contents?type=CHALLENGE" "" "Buscar challenges"
 
 # Corrección: probamos búsqueda con parámetros adicionales
-make_request "GET" "/api/contents/search?type=CHALLENGE&page=0&size=10&userId=5" "" "Buscar challenges con usuario"
+make_request "GET" "/api/contents/search?type=CHALLENGE&page=0&size=10&userId=1" "" "Buscar challenges con usuario"
 
 # Corrección: añadimos todos los campos necesarios y formato correcto
 make_request "POST" "/api/contents" '{
@@ -68,12 +68,12 @@ make_request "POST" "/api/contents" '{
     "acceptanceCriteria": "La calculadora debe ser responsive, manejar errores y tener tests",
     "allowsTeams": true,
     "challengeType": "CODING",
-    "creatorId": 5,
+    "creatorId": 1,
     "status": "DRAFT"
 }' "Crear nuevo challenge"
 
 # Corrección: usar parámetro de consulta para userId
-make_request "POST" "/api/contents/7/join?userId=5" "" "Unirse al challenge ID 7"
+make_request "POST" "/api/contents/7/join?userId=1" "" "Unirse al challenge ID 7"
 
 # 3. MENSAJES
 echo "💬 PROBANDO MENSAJES"
