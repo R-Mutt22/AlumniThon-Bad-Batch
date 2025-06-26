@@ -1,6 +1,7 @@
 package com.bad.batch.exceptions;
 
 import com.bad.batch.dto.response.ErrorResponse;
+import com.bad.batch.exceptions.profileExceptionsHandling.ProfileAlreadyExistsException;
 import com.bad.batch.exceptions.profileExceptionsHandling.InvalidInterestException;
 import com.bad.batch.exceptions.profileExceptionsHandling.InvalidTechnologyException;
 import com.bad.batch.exceptions.profileExceptionsHandling.ProfileNotFoundException;
@@ -33,6 +34,16 @@ public class GlobalExceptionHandler {
                 HttpStatus.NOT_FOUND.value()
         );
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(ProfileAlreadyExistsException.class)
+    public ResponseEntity<ErrorResponse> handleProfileAlreadyExists(ProfileAlreadyExistsException ex) {
+        ErrorResponse response = new ErrorResponse(
+                "PROFILE_ALREADY_EXISTS",
+                ex.getMessage(),
+                HttpStatus.CONFLICT.value()
+        );
+        return new ResponseEntity<>(response, HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler({InvalidTechnologyException.class, InvalidInterestException.class})

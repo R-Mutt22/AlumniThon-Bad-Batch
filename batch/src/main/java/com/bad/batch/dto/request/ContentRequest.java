@@ -19,7 +19,7 @@ public class ContentRequest {
     @Size(max = 2000)
     private String description;
 
-    @NotNull
+    // CreatorId será extraído del JWT automáticamente, no es requerido en el request
     private Long creatorId;
 
     private String status;

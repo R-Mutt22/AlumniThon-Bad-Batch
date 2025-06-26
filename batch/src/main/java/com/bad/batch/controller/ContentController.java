@@ -249,21 +249,27 @@ public class ContentController {
     }
 
     /**
-     * Extrae el ID del usuario del token JWT.
-     * Este es un método dummy que deberá ser implementado con la lógica real.
+     * Extrae el ID del usuario del token JWT usando el atributo establecido por JwtAuthenticationFilter.
      */
     private Long extractUserIdFromJWT(HttpServletRequest request) {
-        // Esta es una implementación dummy - en un entorno real, extraeríamos el ID del JWT
+        // Obtener el ID del usuario desde el atributo establecido por JwtAuthenticationFilter
+        Long userId = (Long) request.getAttribute("X-User-Id");
+        
+        if (userId != null) {
+            return userId;
+        }
+        
+        // Fallback: intentar desde header (para compatibilidad con tests)
         String userIdHeader = request.getHeader("X-User-Id");
         if (userIdHeader != null && !userIdHeader.isEmpty()) {
             try {
                 return Long.parseLong(userIdHeader);
             } catch (NumberFormatException e) {
-                System.err.println("Error al convertir X-User-Id a Long: " + e.getMessage());
+                System.err.println("Error al convertir X-User-Id header a Long: " + e.getMessage());
             }
         }
 
-        // Valor predeterminado o de emergencia
-        return 1L; // ID de un usuario administrador o sistema
+        // Si no se puede obtener el ID, lanzar excepción
+        throw new IllegalStateException("No se pudo obtener el ID del usuario autenticado");
     }
 }

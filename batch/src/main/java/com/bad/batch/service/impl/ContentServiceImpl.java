@@ -105,9 +105,10 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Content> getAllContents() {
         try {
-            List<Content> contents = contentRepository.findAll();
+            List<Content> contents = contentRepository.findAllWithTechnologies();
             if (contents == null) {
                 return new ArrayList<>();
             }
@@ -121,9 +122,10 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Optional<Content> getContentById(Long id) {
         try {
-            return contentRepository.findById(id);
+            return contentRepository.findByIdWithTechnologies(id);
         } catch (Exception e) {
             // Manejo de errores: registrar la excepción y devolver Optional vacío
             System.err.println("Error al obtener contenido por ID " + id + ": " + e.getMessage());
@@ -294,10 +296,11 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Content> searchContents(ContentType type, String tech, String difficulty, int page, int size, Long userId) {
         try {
-            // Obtenemos los contenidos filtrados por usuario
-            List<Content> userContents = getAllContentsForUser(userId);
+            // Obtenemos los contenidos filtrados por usuario usando el método optimizado
+            List<Content> userContents = contentRepository.findAllWithTechnologiesForSearch(userId);
 
             // Aplicamos los filtros adicionales
             List<Content> filteredContents = userContents.stream()
