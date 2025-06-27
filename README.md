@@ -328,7 +328,7 @@ curl http://localhost:8080/api/keep-alive/ping
 ### **Acceso a Documentación**
 
 - **API Docs**: http://localhost:8080/v3/api-docs
-- **Swagger UI**: http://localhost:8080/swagger-ui.html (si está configurado)
+- **Swagger UI**: http://localhost:8080/swagger-ui.html
 - **Health Check**: http://localhost:8080/api/keep-alive/status
 
 ---
