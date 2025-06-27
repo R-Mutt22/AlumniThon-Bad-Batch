@@ -500,17 +500,35 @@ mvn clean package -DskipTests
 
 ---
 
-## 📄 **Licencia y Contribuciones**
+## 📄 **Licencia**
 
-### **Licencia**
-Este proyecto está desarrollado como parte del **Alumnithon 2025** de Alura Latam. 
+```
+MIT License
 
-### **Código de Conducta**
+Copyright (c) 2025 Bad-Batch Team - Alumnithon 2025
+```
 
-- Respetar las mejores prácticas de Spring Boot
-- Documentar nuevos endpoints en Swagger
-- Incluir tests para nuevas funcionalidades
-- Seguir las convenciones de naming del proyecto
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+### **¿Qué significa esto?**
+
+- ✅ **Uso libre**: Puedes usar este código para cualquier propósito
+- ✅ **Modificación**: Puedes modificar y adaptar el código
+- ✅ **Distribución**: Puedes distribuir el código original o modificado
+- ✅ **Uso comercial**: Puedes usar este código en proyectos comerciales
+- ⚠️ **Atribución**: Debes incluir el aviso de copyright original
+- ⚠️ **Sin garantías**: El software se proporciona "tal como está"
+
+---
+
+## 📞 **Contacto y Soporte**
+
+- **🌐 API Endpoint**: https://alumnithon-bad-batch-backend.onrender.com
+- **📚 Documentación**: https://alumnithon-bad-batch-backend.onrender.com/v3/api-docs
+- **🐛 Issues**: [GitHub Issues](https://github.com/R-Mutt22/alumnithon-bad-batch-backend/issues)
+- **🚀 Pull Requests**: [GitHub PRs](https://github.com/R-Mutt22/alumnithon-bad-batch-backend/pulls)
+
+---
 
 <div align="center">
 
