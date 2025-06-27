@@ -19,8 +19,8 @@ NC='\033[0m'
 # Contadores globales
 TOTAL_TESTS=0
 PASSED_TESTS=0
-JWT_TOKEN="eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwidXNlcklkIjoyLCJyb2xlIjoiREVWRUxPUEVSIiwiaWF0IjoxNzUwOTc2OTgxLCJleHAiOjE3NTE4NDA5ODF9.FolZAqsglWoSqL5vp-VpUd_NjUlmPKPx6RPo5qVIp4o"
-USER_ID="2"
+JWT_TOKEN=""
+USER_ID=""
 CONTENT_ID=""
 
 print_header() {
@@ -40,6 +40,7 @@ print_test() {
 
 print_success() {
     echo -e "${GREEN}✅ PASS:${NC} $1"
+    PASSED_TESTS=$((PASSED_TESTS + 1))
 }
 
 print_error() {
@@ -95,13 +96,10 @@ test_endpoint() {
     local body="${response%???}"
     
     # Verificar resultado (puede aceptar múltiples códigos separados por |)
-    local test_passed=false
-    
     if [[ "$expected_status" == *"|"* ]]; then
         # Múltiples códigos esperados
         if [[ "|$expected_status|" == *"|$status_code|"* ]]; then
             print_success "$method $endpoint → $status_code"
-            test_passed=true
             if [ ${#body} -gt 0 ] && [ ${#body} -lt 500 ]; then
                 echo "   📄 Response: $(echo "$body" | head -c 120)..."
             fi
@@ -115,7 +113,6 @@ test_endpoint() {
         # Un solo código esperado
         if [ "$status_code" == "$expected_status" ]; then
             print_success "$method $endpoint → $status_code"
-            test_passed=true
             if [ ${#body} -gt 0 ] && [ ${#body} -lt 500 ]; then
                 echo "   📄 Response: $(echo "$body" | head -c 120)..."
             fi
@@ -125,11 +122,6 @@ test_endpoint() {
                 echo "   📄 Error: $(echo "$body" | head -c 150)..."
             fi
         fi
-    fi
-    
-    # Incrementar PASSED_TESTS solo si el test pasó
-    if [ "$test_passed" = true ]; then
-        PASSED_TESTS=$((PASSED_TESTS + 1))
     fi
     
     # Extraer datos útiles
@@ -148,10 +140,9 @@ extract_data() {
     case "$endpoint" in
         "/api/auth/register"|"/api/auth/login")
             if [ "$status_code" == "200" ] || [ "$status_code" == "201" ]; then
-                local response_token=$(echo "$body" | grep -o '"accessToken":"[^"]*"' | cut -d'"' -f4)
-                if [ -n "$response_token" ]; then
-                    print_info "Token recibido del login: ${response_token:0:30}..."
-                    print_info "Manteniendo token predefinido para tests"
+                JWT_TOKEN=$(echo "$body" | grep -o '"accessToken":"[^"]*"' | cut -d'"' -f4)
+                if [ -n "$JWT_TOKEN" ]; then
+                    print_info "JWT Token obtenido: ${JWT_TOKEN:0:30}..."
                 fi
             fi
             ;;
@@ -179,18 +170,18 @@ extract_data() {
 # =============================================================================
 
 setup_test_data() {
-    # Usuario real funcionando en la API desplegada
+    # Usuario de test
     TEST_USER='{
-        "firstName": "Pl",
-        "lastName": "Rl",
-        "email": "registro30@gmail.com",
-        "password": "SKPOilllñkjljljl3*",
+        "firstName": "TestUser",
+        "lastName": "Automated",
+        "email": "automated.test@skilllink.com",
+        "password": "AutoTest123!",
         "role": "DEVELOPER"
     }'
 
     TEST_LOGIN='{
-        "email": "registro30@gmail.com",
-        "password": "SKPOilllñkjljljl3*"
+        "email": "automated.test@skilllink.com",
+        "password": "AutoTest123!"
     }'
 
     # Perfil simplificado - corregir campo isPublic -> visibility
@@ -244,22 +235,19 @@ test_public_endpoints() {
 test_authentication() {
     print_section "Autenticación"
     
-    # Ya tenemos un token válido configurado, pero probamos login para verificar conectividad
-    print_info "Usando token JWT predefinido para tests autenticados..."
-    print_info "Token: ${JWT_TOKEN:0:50}..."
-    print_info "User ID: $USER_ID"
+    # Intentar registro (puede ser 201 si es nuevo o 409 si ya existe)
+    test_endpoint "POST" "/api/auth/register" "201|409" "Registro de usuario (nuevo o existente)" "$TEST_USER"
     
-    # Primero intentar un endpoint simple para verificar conectividad
-    print_info "Verificando conectividad de la base de datos..."
+    # Si no tenemos token, intentar login
+    if [ -z "$JWT_TOKEN" ]; then
+        print_warning "Registro falló, intentando login con usuario existente..."
+        test_endpoint "POST" "/api/auth/login" "200" "Login de usuario" "$TEST_LOGIN"
+    fi
     
-    # Probar login para verificar que las credenciales funcionan (sin cambiar nuestro token)
-    test_endpoint "POST" "/api/auth/login" "200|500" "Login de usuario (verificación)" "$TEST_LOGIN"
-    
-    # Ya no necesitamos verificar si tenemos token - siempre lo tenemos
     if [ -n "$JWT_TOKEN" ]; then
         test_endpoint "GET" "/api/auth" "200" "Obtener datos del usuario autenticado"
     else
-        print_error "Token JWT no configurado correctamente"
+        print_error "No se pudo obtener token JWT. Tests autenticados se saltarán."
     fi
 }
 
@@ -343,9 +331,6 @@ main() {
     echo -e "${BLUE}Fecha:${NC} $(date)"
     echo -e "${BLUE}Timeout por request:${NC} 10 segundos"
     
-    # Test básico de conectividad
-    print_info "🔍 Realizando test de diagnóstico inicial..."
-    
     # Setup
     setup_test_data
     
@@ -355,31 +340,6 @@ main() {
     test_authenticated_endpoints
     test_data_creation
     test_advanced_features
-    
-    # Diagnóstico adicional
-    print_section "Diagnóstico Detallado"
-    if [ -z "$JWT_TOKEN" ]; then
-        print_warning "⚠️  DIAGNÓSTICO: No se pudo obtener token JWT"
-        print_info "Esto indica un problema con:"
-        print_info "• Configuración de base de datos (DB_URL, DB_USERNAME, DB_PASSWORD)"
-        print_info "• Variables de entorno JWT_SECRET" 
-        print_info "• Configuración spring.jpa.hibernate.ddl-auto"
-        print_info "• Conectividad con Supabase/PostgreSQL"
-        
-        print_info "\n🔧 Verificaciones recomendadas en Render:"
-        print_info "1. Verificar que DB_URL esté configurada correctamente"
-        print_info "2. Verificar que DB_USERNAME y DB_PASSWORD sean correctos"
-        print_info "3. Verificar que JWT_SECRET esté configurado"
-        print_info "4. Verificar logs de Render para errores de conexión específicos"
-        print_info "5. Probar cambiar ddl-auto de 'create' a 'update'"
-        
-        # Test adicional: verificar si es problema de health check
-        print_info "\n🏥 Probando health check..."
-        test_endpoint "GET" "/actuator/health" "200|503" "Health check de la aplicación"
-        
-    else
-        print_success "✅ DIAGNÓSTICO: Sistema de autenticación funcionando correctamente"
-    fi
     
     # Resumen final
     print_header "📊 RESUMEN DE RESULTADOS"
