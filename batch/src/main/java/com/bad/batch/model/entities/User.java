@@ -46,6 +46,7 @@ public class User implements UserDetails { // Correcto que implemente UserDetail
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
+    @Builder.Default
     @Column(nullable = false)
     private Boolean isActive = true;
 
@@ -68,7 +69,7 @@ public class User implements UserDetails { // Correcto que implemente UserDetail
     @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL)
     private Set<Message> sentMessages; // Asume que Message es una entidad en el paquete Model
 
-    @OneToMany(mappedBy = "receiver", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "recipient", cascade = CascadeType.ALL)
     private Set<Message> receivedMessages; // Asume que Message es una entidad en el paquete Model
 
 

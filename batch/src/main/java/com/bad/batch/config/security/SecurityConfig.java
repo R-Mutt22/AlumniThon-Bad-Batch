@@ -44,10 +44,18 @@ public class SecurityConfig {
                                 "/api/auth/register",
                                 "/api/auth/login"
                         ).permitAll()
+                        // WebSocket endpoints
+                        .requestMatchers(
+                                "/ws/**"
+                        ).permitAll()
                         // Rutas de error y actuator (si las usas)
                         .requestMatchers(
                                 "/error",
                                 "/actuator/**"
+                        ).permitAll()
+                        // Keep-alive endpoint
+                        .requestMatchers(
+                                "/api/keep-alive/**"
                         ).permitAll()
                         // Cualquier otra ruta requiere autenticación
                         .anyRequest().authenticated()

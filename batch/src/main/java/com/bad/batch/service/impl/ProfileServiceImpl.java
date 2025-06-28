@@ -8,6 +8,7 @@ import com.bad.batch.dto.request.UpdateProfileRequest;
 import com.bad.batch.dto.response.ProfileResponse;
 import com.bad.batch.dto.response.ProfileSearchResponse;
 import com.bad.batch.exceptions.UserNotFoundException;
+import com.bad.batch.exceptions.profileExceptionsHandling.ProfileAlreadyExistsException;
 import com.bad.batch.exceptions.profileExceptionsHandling.ProfileNotFoundException;
 import com.bad.batch.model.entities.Profile;
 import com.bad.batch.model.entities.User;
@@ -38,7 +39,7 @@ public class ProfileServiceImpl implements ProfileService {
     public ProfileResponse createProfile(Long userId, CreateProfileRequest request) {
         // 1. Validar que el usuario no tenga perfil existente
         if (profileRepository.existsByUserId(userId)) {
-            throw new IllegalStateException("El usuario ya tiene un perfil");
+            throw new ProfileAlreadyExistsException(userId);
         }
 
         // 2. Obtener usuario
@@ -62,7 +63,7 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     @Transactional(readOnly = true)
     public ProfileResponse getMyProfile(Long userId) {
-        Profile profile = profileRepository.findByUserId(userId)
+        Profile profile = profileRepository.findByUserIdWithRelations(userId)
                 .orElseThrow(() -> new ProfileNotFoundException(userId));
         return ProfileMapper.toProfileResponse(profile);
     }
@@ -70,7 +71,7 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     @Transactional(readOnly = true)
     public ProfileResponse getUserProfile(Long userId) {
-        Profile profile = profileRepository.findByUserId(userId)
+        Profile profile = profileRepository.findByUserIdWithRelations(userId)
                 .orElseThrow(() -> new ProfileNotFoundException(userId));
         validationService.validateProfileVisibility(userId, profile.getUser().getId(), profile);
         return ProfileMapper.toProfileResponse(profile);
@@ -79,7 +80,7 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     @Transactional
     public ProfileResponse updateMyProfile(Long userId, UpdateProfileRequest request) {
-        Profile profile = profileRepository.findByUserId(userId)
+        Profile profile = profileRepository.findByUserIdWithRelations(userId)
                 .orElseThrow(() -> new ProfileNotFoundException(userId));
 
         validationService.validateProfileUpdate(request);

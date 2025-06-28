@@ -28,6 +28,14 @@ public class WebSocketSecurityConfig implements ChannelInterceptor {
         if (StompCommand.CONNECT.equals(accessor.getCommand())) {
             String authToken = accessor.getFirstNativeHeader("Authorization");
             
+            // Si no hay token en Authorization header, buscar en los atributos de sesión (del handshake)
+            if (authToken == null && accessor.getSessionAttributes() != null) {
+                Object tokenAttr = accessor.getSessionAttributes().get("token");
+                if (tokenAttr != null) {
+                    authToken = "Bearer " + tokenAttr.toString();
+                }
+            }
+            
             if (authToken != null && authToken.startsWith("Bearer ")) {
                 String token = authToken.substring(7);
                 

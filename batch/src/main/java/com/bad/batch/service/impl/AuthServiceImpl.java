@@ -45,8 +45,7 @@ public class AuthServiceImpl implements AuthService {
             User userCreated = userRepository.save(userToSave);
             log.info("Usuario creado exitosamente con ID: {}", userCreated.getId());
 
-            String roleName = userCreated.getRole().name();
-            return jwtService.generateToken(userCreated.getId(), roleName);
+            return jwtService.generateTokenWithUser(userCreated);
         } catch (IllegalArgumentException e) {
             throw e;
         }  catch (Exception e) {
@@ -71,9 +70,8 @@ public class AuthServiceImpl implements AuthService {
             throw new IllegalArgumentException("Usuario o contraseña inválidos.");
         }
 
-        String roleName = user.getRole().name();
         log.info("Login exitoso para usuario: {}", loginRequest.getEmail());
-        return jwtService.generateToken(user.getId(), roleName);
+        return jwtService.generateTokenWithUser(user);
     }
 
     @Override

@@ -14,6 +14,14 @@ import java.util.Set;
 public interface ProfileRepository extends JpaRepository<Profile,Long> {
 
     Optional<Profile>findByUserId(Long userId);
+    
+    // Método para obtener perfil con todas las relaciones cargadas
+    @Query("SELECT p FROM Profile p " +
+           "JOIN FETCH p.user u " +
+           "LEFT JOIN FETCH p.technologies " +
+           "LEFT JOIN FETCH p.interests " +
+           "WHERE p.user.id = :userId")
+    Optional<Profile> findByUserIdWithRelations(@Param("userId") Long userId);
 
     boolean existsByUserId(Long userId);
 
@@ -41,9 +49,9 @@ public interface ProfileRepository extends JpaRepository<Profile,Long> {
     Page<Profile> findPublicProfilesByLocation(@Param("location") String location, Pageable pageable);
 
     // Búsqueda compleja con múltiples filtros
-    @Query("SELECT DISTINCT p FROM Profile p JOIN p.user u " +
-            "LEFT JOIN p.technologies t " +
-            "LEFT JOIN p.interests i " +
+    @Query("SELECT DISTINCT p FROM Profile p JOIN FETCH p.user u " +
+            "LEFT JOIN FETCH p.technologies t " +
+            "LEFT JOIN FETCH p.interests i " +
             "WHERE p.visibility = 'PUBLIC' " +
             "AND u.isActive = true " +
             "AND (:query IS NULL OR :query = '' OR " +

@@ -15,7 +15,7 @@ public class ChatMessageRequest {
     private ChatMessageType type = ChatMessageType.TEXT;
 
     private Long recipientId; // Para mensajes directos
-    private Long challengId; // Para chats de challenges
+    private Long challengeId; // Para chats de challenges
     private Long mentorshipId; // Para chats de mentoría
     
 }
